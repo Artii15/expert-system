@@ -1,0 +1,19 @@
+[
+    {
+        "rule": "init",
+        "label": "To Triss Merigold",
+        "answers": [
+            {
+                "img": "triss.jpg",
+                "label": "Triss Merigold",
+                "value": "triss"
+            },
+            {
+                "img": "triss.jpg",
+                "label": "Triss Merigold",
+                "value": "triss"
+            }
+        ],
+        "multiple": false
+    }
+]
