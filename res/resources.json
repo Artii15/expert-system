@@ -153,5 +153,49 @@
             }
         ],
         "multiple": false
+    },
+    {
+        "rule": "To Esterad Thyssen",
+        "label": "To Esterad Thyssen - król Koviru",
+        "answers": [
+            {
+                "img": "esterad.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Emhyr",
+        "label": "To Emhyr Var Emreis - cesarz Nilfgaardu",
+        "answers": [
+            {
+                "img": "emhyr.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Henselt",
+        "label": "To Henselt - król Kaedwen",
+        "answers": [
+            {
+                "img": "henselt.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Demawend",
+        "label": "To Demawend - król Aedirn",
+        "answers": [
+            {
+                "img": "demawend.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
     }
 ]

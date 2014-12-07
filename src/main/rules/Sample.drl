@@ -177,32 +177,52 @@ rule "To Francesca Findabair"
        	insert(new Attribute("imię", "Francesca Findabair"));
 end
 
-rule "It's Esterad Thyssen"
+rule "To Esterad Thyssen"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Kovir" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Kovir" )
 	then
-		System.out.println("It's Esterad Thyssen");
+		Questionaire questionaire = new Questionaire("To Esterad Thyssen");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Esterad Thyssen"));
 end
 
-rule "It's Emhyr"
+rule "To Emhyr"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Nilfgard" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Nilfgaard" )
 	then
-		System.out.println("It's Emhyr Var Emreis");
+		Questionaire questionaire = new Questionaire("To Emhyr");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Emhyr"));
 end
 
-rule "It's Henselt"
+rule "To Henselt"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Kaedwen" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Kaedwen" )
 	then
-		System.out.println("It's king Henselt");
+		Questionaire questionaire = new Questionaire("To Henselt");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Henselt"));
 end
 
-rule "It's Demawend"
+rule "To Demawend"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Aedirn" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Aedirn" )
 	then
-		System.out.println("It's king Demawend");
+		Questionaire questionaire = new Questionaire("To Demawend");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Demawend"));
 end
 
 rule "It's Foltest"
