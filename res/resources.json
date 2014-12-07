@@ -15,7 +15,7 @@
         "multiple": false
     },
     {
-        "rule": "Określ nie-magiczną rasę",
+        "rule": "Określ rasę",
         "label": "Jaka jest rasa Twojej postaci?",
         "answers": [
             {
@@ -29,21 +29,6 @@
             {
                 "img": "dwarves.jpg",
                 "label": "krasnolud"
-            }
-        ],
-        "multiple": false
-    },
-    {
-        "rule": "Określ magiczną rasę",
-        "label": "Jaka jest rasa Twojej postaci?",
-        "answers": [
-            {
-                "img": "people.jpg",
-                "label": "człowiek"
-            },
-            {
-                "img": "elves.jpg",
-                "label": "elf"
             }
         ],
         "multiple": false
@@ -145,6 +130,28 @@
                 "label": ""
             }
         ],
-        "multiple": true
+        "multiple": false
+    },
+    {
+        "rule": "To Calanthe",
+        "label": "To Calanthe - królowa Cintry",
+        "answers": [
+            {
+                "img": "calanthe.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Francesca Findabair",
+        "label": "To Francesca Findabair - elfia czarodziejka, królowa Doliny Kwiatów",
+        "answers": [
+            {
+                "img": "francesca.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
     }
 ]

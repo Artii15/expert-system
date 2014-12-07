@@ -22,26 +22,14 @@ rule "Wykryj rodzaj"
        	}
 end
 
-rule "Określ nie-magiczną rasę"
+rule "Określ rasę"
 	when
-		$profession : Attribute( name == "profesja", value != "magia" )
+		$rodzaj : Attribute( name == "rodzaj", value == "humanoid" )
 	then
-		Questionaire questionaire = new Questionaire("Określ nie-magiczną rasę");
+		Questionaire questionaire = new Questionaire("Określ rasę");
 		LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("rasa", answer));
-       	}
-end
-
-rule "Określ magiczną rasę"
-	when
-		$profession : Attribute( name == "profesja", value == "magia" )
-	then
-		Questionaire questionaire = new Questionaire("Określ magiczną rasę");
-        LinkedList<String> answers = questionaire.askUser();
-       	
-       	for(String answer : answers) {											 
        		insert(new Attribute("rasa", answer));
        	}
 end
@@ -154,16 +142,39 @@ rule "To Meve"
 	when
 		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Lyria i Rivia" )
+		$rasa : Attribute( name == "rasa", value == "człowiek" )
 	then
 		Questionaire questionaire = new Questionaire("To Meve");
        	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Meve"));
 end
 
-rule "It's Calanthe"
+rule "To Calanthe"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Cintra" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Cintra" )
+		$rasa : Attribute( name == "rasa", value == "człowiek" )
 	then
-		System.out.println("It's Quen Calanthe");
+		Questionaire questionaire = new Questionaire("To Calanthe");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Calanthe"));
+end
+
+rule "To Francesca Findabair"
+	when
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
+		$rasa : Attribute( name == "rasa", value == "elf" )
+	then
+		Questionaire questionaire = new Questionaire("To Francesca Findabair");
+       	questionaire.informUser();
+       	
+       	retract($imie);
+       	insert(new Attribute("imię", "Francesca Findabair"));
 end
 
 rule "It's Esterad Thyssen"
