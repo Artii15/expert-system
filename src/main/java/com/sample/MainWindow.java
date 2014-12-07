@@ -77,7 +77,7 @@ public class MainWindow extends JFrame{
 		for(Answer answer : questionData.answers) {
 			addAnswer(answer, group);
 		}
-		answersButtons.get(0).setSelected(true);
+
 		this.confirmButton.setVisible(true);
 		this.pack();
 		this.repaint();
@@ -92,13 +92,11 @@ public class MainWindow extends JFrame{
 		answerBox.add(img);
 		
 		AbstractButton answerButton;
-		if(group == null) {
-			answerButton = new JCheckBox(answer.label);
-		}
-		else {
-			answerButton = new JRadioButton(answer.label);
+		answerButton = new JCheckBox(answer.label);
+		if(group != null) {
 			group.add(answerButton);
 		}
+			
 		answerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 		answersButtons.add(answerButton);
 		answerBox.add(answerButton);
