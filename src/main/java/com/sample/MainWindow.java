@@ -115,7 +115,8 @@ public class MainWindow extends JFrame{
 		for(Answer answer : questionData.answers) {
 			addAnswer(answer, questionData.multiple);
 		}
-		answersPane.repaint();
+		this.pack();
+		this.repaint();
 	}
 	
 	private void addAnswer(Answer answer, boolean multiple) {
@@ -124,7 +125,9 @@ public class MainWindow extends JFrame{
 		answersPane.add(answerBox);
 		ImagePanel img = new ImagePanel("./res/img/" + answer.img);
 		answerBox.add(img);
-		answerBox.add(new JLabel(answer.label));
+		JRadioButton answerButton = new JRadioButton(answer.label);
+		answerButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		answerBox.add(answerButton);
 	}
 	
 	public String getAnswer() {
