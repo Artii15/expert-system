@@ -6,7 +6,6 @@ rule "init"
 	when
 	then
 		insert(new Attribute("rodzaj", "nieznany"));
-		insert(new Attribute("imię", "nieznane"));
 end
 
 rule "Wykryj rodzaj"
@@ -140,103 +139,77 @@ end
 
 rule "To Meve"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Lyria i Rivia" )
 		$rasa : Attribute( name == "rasa", value == "człowiek" )
 	then
 		Questionaire questionaire = new Questionaire("To Meve");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Meve"));
 end
 
 rule "To Calanthe"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Cintra" )
 		$rasa : Attribute( name == "rasa", value == "człowiek" )
 	then
 		Questionaire questionaire = new Questionaire("To Calanthe");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Calanthe"));
 end
 
 rule "To Francesca Findabair"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
 		$rasa : Attribute( name == "rasa", value == "elf" )
 	then
 		Questionaire questionaire = new Questionaire("To Francesca Findabair");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Francesca Findabair"));
 end
 
 rule "To Esterad Thyssen"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Kovir" )
 	then
 		Questionaire questionaire = new Questionaire("To Esterad Thyssen");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Esterad Thyssen"));
 end
 
 rule "To Emhyr"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Nilfgaard" )
 	then
 		Questionaire questionaire = new Questionaire("To Emhyr");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Emhyr"));
 end
 
 rule "To Henselt"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Kaedwen" )
 	then
 		Questionaire questionaire = new Questionaire("To Henselt");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Henselt"));
 end
 
 rule "To Demawend"
 	when
-		$imie : Attribute( name == "imię", value == "nieznane" )
 		$panstwo : Attribute( name == "zarządzane państwo", value == "Aedirn" )
 	then
 		Questionaire questionaire = new Questionaire("To Demawend");
        	questionaire.informUser();
-       	
-       	retract($imie);
-       	insert(new Attribute("imię", "Demawend"));
 end
 
-rule "It's Foltest"
+rule "To Foltest"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Temeria" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Temeria" )
 	then
-		System.out.println("It's king Foltest");
+		Questionaire questionaire = new Questionaire("To Foltest");
+       	questionaire.informUser();
 end
 
-rule "It's Radovid"
+rule "To Radovid"
 	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Redania" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Redania" )
 	then
-		System.out.println("It's king Radovid");
+		Questionaire questionaire = new Questionaire("To Radovid");
+       	questionaire.informUser();
 end
 
 rule "Determine if it's witcher"
@@ -321,37 +294,29 @@ rule "It's Eudora Breckenrigs"
 end
 
 
-rule "Determine romanced with Geralt"
+rule "Określ czy romansowała z Geraltem"
 	when 
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
+		$plec : Attribute( name == "płeć", value == "kobieta" )
+		$race : Attribute( name == "rasa", value == "człowiek" )
 	then
-		Questionaire questionaire = new Questionaire("Romanced with Geralt of Rivia?");
+		Questionaire questionaire = new Questionaire("Określ czy romansowała z Geraltem");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {											 
-       		insert(new Attribute("romanced_geralt", answer));
+       		insert(new Attribute("romans", answer));
        	}
 end
 
-rule "It's Francesca Findabair"
+rule "Określ czy doradza jakiemuś królowi"
 	when 
-		$race : Attribute( name == "race", value == "elf" )
-		$profession : Attribute( name == "profession", value == "magic" )
+		$race : Attribute( name == "rasa", value == "człowiek" )
+		$profesja : Attribute( name == "profesja", value == "magia" )
 	then
-		System.out.println("It's Francesca Findabair");
-end
-
-rule "Determine if sorceress served somewhere"
-	when 
-		$profession : Attribute( name == "profession", value == "magic" )
-		$race : Attribute( name == "race", value == "human" )
-	then
-		Questionaire questionaire = new Questionaire("Served in one of those kingdoms?");
+		Questionaire questionaire = new Questionaire("Określ czy doradza jakiemuś królowi");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {											 
-       		insert(new Attribute("served_in", answer));
+       		insert(new Attribute("doradza", answer));
        	}
 end
 
@@ -385,14 +350,14 @@ rule "It's Fringilla Vigo"
 		System.out.println("It's Sabrina Glevisig");
 end
 
-rule "It's Triss Merigold"
+rule "To Triss"
 	when 
-		$serves : Attribute( (name == "served_in" && value == "Temeria") || (name == "hair" && value == "red")  )
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "yes" )
+		Attribute( name == "doradza", value == "Foltest" ) 
+		Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "romans", value == "tak" )
 	then
-		System.out.println("It's Triss Merigold");
+		Questionaire questionaire = new Questionaire("To Triss");
+       	questionaire.informUser();
 end
 
 rule "It's Yennefer"

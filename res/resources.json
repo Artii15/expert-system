@@ -197,5 +197,72 @@
             }
         ],
         "multiple": false
-    }
+    },
+    {
+        "rule": "To Foltest",
+        "label": "To Foltest - król Temerii",
+        "answers": [
+            {
+                "img": "foltest.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Radovid",
+        "label": "To Radovid - król Redanii",
+        "answers": [
+            {
+                "img": "radovid.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ czy romansowała z Geraltem",
+        "label": "Czy miała romans z Geraltem z Rivii",
+        "answers": [
+            {
+                "img": "romance.jpg",
+                "label": "tak"
+            },
+            {
+                "img": "no_romance.jpg",
+                "label": "nie"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ czy doradza jakiemuś królowi",
+        "label": "Czy doradza któremuś z tych królów?",
+        "answers": [
+            {
+                "img": "henselt.jpg",
+                "label": "Henselt"
+            },
+            {
+                "img": "foltest.jpg",
+                "label": "Foltest"
+            },
+            {
+                "img": "radovid.jpg",
+                "label": "Radovid"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Triss",
+        "label": "To Triss Merigold",
+        "answers": [
+            {
+                "img": "triss.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
 ]
