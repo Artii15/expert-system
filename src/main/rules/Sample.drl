@@ -8,11 +8,11 @@ rule "init"
 		insert(new Attribute("kind", "unknown"));
 end
 
-rule "Determine kind"
+rule "Wykryj rodzaj"
     when
         $kind : Attribute( name == "kind", value == "unknown" )
     then
-        Questionaire questionaire = new Questionaire("init");
+        Questionaire questionaire = new Questionaire("Wykryj rodzaj");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {

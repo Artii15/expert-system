@@ -1,17 +1,15 @@
 [
     {
-        "rule": "init",
-        "label": "To Triss Merigold",
+        "rule": "Wykryj rodzaj",
+        "label": "Jaki rodzaj postaci masz na myśli?",
         "answers": [
             {
                 "img": "triss.jpg",
-                "label": "Triss Merigold",
-                "value": "triss"
+                "label": "humanoid",
             },
             {
                 "img": "triss.jpg",
-                "label": "Triss Merigold",
-                "value": "triss"
+                "label": "potwór",
             }
         ],
         "multiple": false

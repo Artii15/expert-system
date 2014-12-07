@@ -49,7 +49,6 @@ public class Settings {
 			Answer processedAnswer = new Answer();
 			processedAnswer.img = (String) encodedAnswer.get("img");
 			processedAnswer.label = (String) encodedAnswer.get("label");
-			processedAnswer.value = (String) encodedAnswer.get("value");
 			
 			processedAnswers.add(processedAnswer);
 		}
