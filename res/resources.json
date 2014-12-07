@@ -5,11 +5,11 @@
         "answers": [
             {
                 "img": "characters.jpg",
-                "label": "humanoid",
+                "label": "humanoid"
             },
             {
                 "img": "monsters.jpg",
-                "label": "potwór",
+                "label": "potwór"
             }
         ],
         "multiple": false
@@ -20,15 +20,15 @@
         "answers": [
             {
                 "img": "people.jpg",
-                "label": "człowiek",
+                "label": "człowiek"
             },
             {
                 "img": "elves.jpg",
-                "label": "elf",
+                "label": "elf"
             },
             {
                 "img": "dwarves.jpg",
-                "label": "krasnolud",
+                "label": "krasnolud"
             }
         ],
         "multiple": false
@@ -39,11 +39,11 @@
         "answers": [
             {
                 "img": "people.jpg",
-                "label": "człowiek",
+                "label": "człowiek"
             },
             {
                 "img": "elves.jpg",
-                "label": "elf",
+                "label": "elf"
             }
         ],
         "multiple": false
@@ -54,13 +54,97 @@
         "answers": [
             {
                 "img": "female.jpg",
-                "label": "kobieta",
+                "label": "kobieta"
             },
             {
                 "img": "male.jpg",
-                "label": "mężczyzna",
+                "label": "mężczyzna"
             }
         ],
         "multiple": false
+    },
+    {
+        "rule": "Określ profesje",
+        "label": "Co potrafi Twoja postać?",
+        "answers": [
+            {
+                "img": "combat.jpg",
+                "label": "walka"
+            },
+            {
+                "img": "magic.jpg",
+                "label": "magia"
+            },
+            {
+                "img": "creativity.jpg",
+                "label": "kreatywność"
+            },
+            {
+                "img": "governance.jpg",
+                "label": "sprawowanie władzy"
+            }
+        ],
+        "multiple": true
+    },
+    {
+        "rule": "Określ którymi państwami włada (mężczyzna)",
+        "label": "Czy Twoja postać włada którymś z tych państw?",
+        "answers": [
+            {
+                "img": "temeria.jpg",
+                "label": "Temeria"
+            },
+            {
+                "img": "redania.jpg",
+                "label": "Redania"
+            },
+            {
+                "img": "kaedwen.jpg",
+                "label": "Kaedwen"
+            },
+            {
+                "img": "aedirn.jpg",
+                "label": "Aedirn"
+            },
+            {
+                "img": "kovir.jpg",
+                "label": "Kovir"
+            },
+            {
+                "img": "nilfgaard.jpg",
+                "label": "Nilfgaard"
+            }
+        ],
+        "multiple": true
+    },
+    {
+        "rule": "Określ którymi państwami włada (kobieta)",
+        "label": "Czy Twoja postać władała którymś z tych państw?",
+        "answers": [
+            {
+                "img": "cintra.jpg",
+                "label": "Cintra"
+            },
+            {
+                "img": "lyria_rivia.jpg",
+                "label": "Lyria i Rivia"
+            },
+            {
+                "img": "dol_blathanna.jpg",
+                "label": "Dol Blathanna"
+            }
+        ],
+        "multiple": true
+    },
+    {
+        "rule": "To Meve",
+        "label": "To Meve - królowa Lyrii i Rivii",
+        "answers": [
+            {
+                "img": "meve.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": true
     }
 ]

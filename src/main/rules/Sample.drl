@@ -6,15 +6,17 @@ rule "init"
 	when
 	then
 		insert(new Attribute("rodzaj", "nieznany"));
+		insert(new Attribute("imię", "nieznane"));
 end
 
 rule "Wykryj rodzaj"
     when
-        $kind : Attribute( name == "rodzaj", value == "nieznany" )
+        $rodzaj : Attribute( name == "rodzaj", value == "nieznany" )
     then
         Questionaire questionaire = new Questionaire("Wykryj rodzaj");
         LinkedList<String> answers = questionaire.askUser();
        	
+       	retract($rodzaj);
        	for(String answer : answers) {
        		insert(new Attribute("rodzaj", answer));
        	}
@@ -56,9 +58,9 @@ rule "Określ płeć"
        	}
 end
 
-rule "Determine hair color for witcher" 
+rule "Określ kolor włosów wiedźmina" 
 	when
-		$kind : Attribute( name == "kind", value == "humanoid" )
+		$kind : Attribute( name == "rodzaj", value == "humanoid" )
 		$mutant : Attribute( name == "mutant", value == "yes" )
 	then
 		Questionaire questionaire = new Questionaire("What is character's hair color?");
@@ -106,62 +108,55 @@ rule "It's Eskel"
 		System.out.println("It's Eskel");
 end
 
-rule "Determine what is character doing best"
+rule "Określ profesje"
 	when
-		$kind : Attribute( name == "kind", value == "humanoid" )
+		$kind : Attribute( name == "rodzaj", value == "humanoid" )
 	then
-		Questionaire questionaire = new Questionaire("What is character's profession?");
+		Questionaire questionaire = new Questionaire("Określ profesje");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("profession", answer));
+       		insert(new Attribute("profesja", answer));
        	}
 end
 
-rule "Determine if rules"
+rule "Określ którymi państwami włada (mężczyzna)"
 	when
-		$profession : Attribute( name == "profession", value == "power")
-		$race : Attribute( name == "race", value == "human" )
+		$profesja : Attribute( name == "profesja", value == "sprawowanie władzy" )
+		$rasa : Attribute( name == "rasa", value == "człowiek" )
+		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		
 	then
-		Questionaire questionaire = new Questionaire("Has this character ever ruled any kingdom?");
+		Questionaire questionaire = new Questionaire("Określ którymi państwami włada (mężczyzna)");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("ruled", answer));
+       		insert(new Attribute("zarządzane państwo", answer));
        	}
 end
 
-rule "Determine country ruled by woman"
+rule "Określ którymi państwami włada (kobieta)"
 	when
-		$ruled : Attribute( name == "ruled", value == "yes" )
-		$gender : Attribute( name == "gender", value == "female" )
+		$profesja : Attribute( name == "profesja", value == "sprawowanie władzy" )
+		$rasa : Attribute( name == "rasa", value != "krasnolud" )
+		$plec : Attribute( name == "płeć", value == "kobieta" )
+
 	then
-		Questionaire questionaire = new Questionaire("Which has she ruled?");
+		Questionaire questionaire = new Questionaire("Określ którymi państwami włada (kobieta)");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("country_ruled", answer));
+       		insert(new Attribute("zarządzane państwo", answer));
        	}
 end
 
-rule "Determine country ruled by man"
+rule "To Meve"
 	when
-		$ruled : Attribute( name == "ruled", value == "yes" )
-		$gender : Attribute( name == "gender", value == "male" )
+		$imie : Attribute( name == "imię", value == "nieznane" )
+		$panstwo : Attribute( name == "zarządzane państwo", value == "Lyria i Rivia" )
 	then
-		Questionaire questionaire = new Questionaire("Which has he ruled?");
-       	LinkedList<String> answers = questionaire.askUser();
-       	
-       	for(String answer : answers) {
-       		insert(new Attribute("country_ruled", answer));
-       	}
-end	
-
-rule "It's Meve"
-	when
-		$country_ruled : Attribute( name == "country_ruled", value == "Lyria and Rivia" )
-	then
-		System.out.println("It's Quen Meve");
+		Questionaire questionaire = new Questionaire("To Meve");
+       	questionaire.informUser();
 end
 
 rule "It's Calanthe"

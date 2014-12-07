@@ -14,13 +14,20 @@ public class Questionaire {
 	public LinkedList<String> askUser() throws InterruptedException {
 		Rule questionData = DroolsTest.settings.getSettings().get(ruleName);
 		DroolsTest.frame.displayQuestion(questionData);
-		waitForAnswer();  
+		waitForUser();  
 		LinkedList<String> answers = DroolsTest.frame.getAnswer();
 		
 	    return answers;
 	}
 	
-	private void waitForAnswer() throws InterruptedException {
+	public void informUser() throws InterruptedException {
+		Rule solution = DroolsTest.settings.getSettings().get(ruleName);
+		DroolsTest.frame.displaySolution(solution);
+		
+		waitForUser();
+	}
+	
+	private void waitForUser() throws InterruptedException {
 		synchronized(monitor) {
 			monitor.wait();
 		}

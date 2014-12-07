@@ -113,4 +113,22 @@ public class MainWindow extends JFrame{
 		}
 		return answers;
 	}
+	
+	public void displaySolution(Rule solution) {
+		statusLabel.setText(solution.label);
+		answersPane.removeAll();
+		
+		Answer solutionInfo = solution.answers.get(0);
+		
+		JPanel solutionBox = new JPanel();
+		solutionBox.setLayout(new BoxLayout(solutionBox, BoxLayout.Y_AXIS));
+		answersPane.add(solutionBox);
+		
+		ImagePanel img = new ImagePanel("./res/img/" + solutionInfo.img);
+		solutionBox.add(img);
+		
+		this.confirmButton.setVisible(false);
+		this.pack();
+		this.repaint();
+	}
 }
