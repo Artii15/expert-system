@@ -1,5 +1,7 @@
 package com.sample
 
+import java.util.LinkedList;
+
 rule "init"
 	when
 	then
@@ -11,7 +13,11 @@ rule "Determine kind"
         $kind : Attribute( name == "kind", value == "unknown" )
     then
         Questionaire questionaire = new Questionaire("init");
-       	insert(new Attribute("kind", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("kind", answer));
+       	}
 end
 
 rule "Determine non-magical race"
@@ -19,8 +25,11 @@ rule "Determine non-magical race"
 		$profession : Attribute( name == "profession", value != "magic" )
 	then
 		Questionaire questionaire = new Questionaire("What is a race?");
-        											 
-       	insert(new Attribute("race", questionaire.askUser()));
+		LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("race", answer));
+       	}
 end
 
 rule "Determine magical race"
@@ -28,8 +37,11 @@ rule "Determine magical race"
 		$profession : Attribute( name == "profession", value == "magic" )
 	then
 		Questionaire questionaire = new Questionaire("What is a race?");
-        											 
-       	insert(new Attribute("race", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("race", answer));
+       	}
 end
 
 rule "Determine gender"
@@ -37,8 +49,11 @@ rule "Determine gender"
 		$kind : Attribute( name == "kind", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("What is a gender?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("gender", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("gender", answer));
+       	}
 end
 
 rule "Determine hair color for witcher" 
@@ -47,8 +62,11 @@ rule "Determine hair color for witcher"
 		$mutant : Attribute( name == "mutant", value == "yes" )
 	then
 		Questionaire questionaire = new Questionaire("What is character's hair color?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("hair", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("hair", answer));
+       	}
 end
 
 rule "Determine witchers specific feature"
@@ -57,8 +75,11 @@ rule "Determine witchers specific feature"
 		$hair : Attribute( name == "hair", value == "dark" )
 	then
 		Questionaire questionaire = new Questionaire("What is witcher's specific feature?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("specific_feature", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("specific_feature", answer));
+       	}
 end
 
 rule "It's Lambert"
@@ -90,8 +111,11 @@ rule "Determine what is character doing best"
 		$kind : Attribute( name == "kind", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("What is character's profession?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("profession", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("profession", answer));
+       	}
 end
 
 rule "Determine if rules"
@@ -100,8 +124,11 @@ rule "Determine if rules"
 		$race : Attribute( name == "race", value == "human" )
 	then
 		Questionaire questionaire = new Questionaire("Has this character ever ruled any kingdom?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("ruled", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("ruled", answer));
+       	}
 end
 
 rule "Determine country ruled by woman"
@@ -110,8 +137,11 @@ rule "Determine country ruled by woman"
 		$gender : Attribute( name == "gender", value == "female" )
 	then
 		Questionaire questionaire = new Questionaire("Which has she ruled?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("country_ruled", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("country_ruled", answer));
+       	}
 end
 
 rule "Determine country ruled by man"
@@ -120,8 +150,11 @@ rule "Determine country ruled by man"
 		$gender : Attribute( name == "gender", value == "male" )
 	then
 		Questionaire questionaire = new Questionaire("Which has he ruled?");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	insert(new Attribute("country_ruled", questionaire.askUser()));
+       	for(String answer : answers) {
+       		insert(new Attribute("country_ruled", answer));
+       	}
 end	
 
 rule "It's Meve"
@@ -187,8 +220,11 @@ rule "Determine if it's witcher"
 		$gender : Attribute( name == "gender", value == "male" )
 	then
 		Questionaire questionaire = new Questionaire("Is he a witcher?");
-        											 
-       	insert(new Attribute("mutant", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("mutant", answer));
+       	}
 end
 
 rule "It's Geralt"
@@ -221,8 +257,11 @@ rule "Determine if it's engaged dwarf"
 		$race : Attribute( name == "race", value == "dwarf" )
 	then
 		Questionaire questionaire = new Questionaire("Is your character engaged?");
-        											 
-       	insert(new Attribute("engaged", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("engaged", answer));
+       	}
 end
 
 rule "It's Zoltan Chivay"
@@ -262,8 +301,11 @@ rule "Determine romanced with Geralt"
 		$race : Attribute( name == "race", value == "human" )
 	then
 		Questionaire questionaire = new Questionaire("Romanced with Geralt of Rivia?");
-        											 
-       	insert(new Attribute("romanced_geralt", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("romanced_geralt", answer));
+       	}
 end
 
 rule "It's Francesca Findabair"
@@ -280,8 +322,11 @@ rule "Determine if sorceress served somewhere"
 		$race : Attribute( name == "race", value == "human" )
 	then
 		Questionaire questionaire = new Questionaire("Served in one of those kingdoms?");
-        											 
-       	insert(new Attribute("served_in", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("served_in", answer));
+       	}
 end
 
 rule "It's Filippa Eihlhart"
@@ -340,8 +385,11 @@ rule "Determine Geralt's familiar sorceress hair color"
 		$served_in : Attribute( name == "served_in", value == "dont know" )
 	then
 		Questionaire questionaire = new Questionaire("What is her hair like?");
-        											 
-       	insert(new Attribute("hair", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("hair", answer));
+       	}
 end
 
 rule "Determine woman's hair color"
@@ -350,8 +398,11 @@ rule "Determine woman's hair color"
 		$race : Attribute( name == "race", value == "human" )
 	then
 		Questionaire questionaire = new Questionaire("What is her hair like?");
-        											 
-       	insert(new Attribute("hair", questionaire.askUser()));
+        LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {											 
+       		insert(new Attribute("hair", answer));
+       	}
 end
 
 rule "It's Ciri"

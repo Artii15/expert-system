@@ -1,5 +1,7 @@
 package com.sample;
 
+import java.util.LinkedList;
+
 public class Questionaire {
 	private Object monitor;
 	private String ruleName;
@@ -9,13 +11,13 @@ public class Questionaire {
 		this.ruleName = ruleName;
 	}
 	
-	public String askUser() throws InterruptedException {
+	public LinkedList<String> askUser() throws InterruptedException {
 		Rule questionData = DroolsTest.settings.getSettings().get(ruleName);
 		DroolsTest.frame.displayQuestion(questionData);
 		waitForAnswer();  
-		String answer = DroolsTest.frame.getAnswer();
+		LinkedList<String> answers = DroolsTest.frame.getAnswer();
 		
-	    return answer;
+	    return answers;
 	}
 	
 	private void waitForAnswer() throws InterruptedException {
