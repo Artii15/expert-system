@@ -32,12 +32,13 @@ public class MainWindow extends JFrame{
 	
 	private void configureMainPane() {
 		mainPane.setLayout(new BoxLayout(mainPane, BoxLayout.Y_AXIS));
-		mainPane.setPreferredSize(new Dimension(900, 600));
+		//mainPane.setPreferredSize(new Dimension(900, 600));
 	}
 	
 	private void addStatusLabel() {
 		statusLabel = new JLabel("Ładowanie bazy wiedzy ...");
 		statusLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+		statusLabel.setFont(statusLabel.getFont().deriveFont(32.0f));
 		
 		mainPane.add(statusLabel);
 	}

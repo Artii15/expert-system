@@ -5,54 +5,54 @@ import java.util.LinkedList;
 rule "init"
 	when
 	then
-		insert(new Attribute("kind", "unknown"));
+		insert(new Attribute("rodzaj", "nieznany"));
 end
 
 rule "Wykryj rodzaj"
     when
-        $kind : Attribute( name == "kind", value == "unknown" )
+        $kind : Attribute( name == "rodzaj", value == "nieznany" )
     then
         Questionaire questionaire = new Questionaire("Wykryj rodzaj");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("kind", answer));
+       		insert(new Attribute("rodzaj", answer));
        	}
 end
 
-rule "Determine non-magical race"
+rule "Określ nie-magiczną rasę"
 	when
-		$profession : Attribute( name == "profession", value != "magic" )
+		$profession : Attribute( name == "profesja", value != "magia" )
 	then
-		Questionaire questionaire = new Questionaire("What is a race?");
+		Questionaire questionaire = new Questionaire("Określ nie-magiczną rasę");
 		LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("race", answer));
+       		insert(new Attribute("rasa", answer));
        	}
 end
 
-rule "Determine magical race"
+rule "Określ magiczną rasę"
 	when
-		$profession : Attribute( name == "profession", value == "magic" )
+		$profession : Attribute( name == "profesja", value == "magia" )
 	then
-		Questionaire questionaire = new Questionaire("What is a race?");
+		Questionaire questionaire = new Questionaire("Określ magiczną rasę");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {											 
-       		insert(new Attribute("race", answer));
+       		insert(new Attribute("rasa", answer));
        	}
 end
 
-rule "Determine gender"
+rule "Określ płeć"
 	when
-		$kind : Attribute( name == "kind", value == "humanoid" )
+		$kind : Attribute( name == "rodzaj", value == "humanoid" )
 	then
-		Questionaire questionaire = new Questionaire("What is a gender?");
+		Questionaire questionaire = new Questionaire("Określ płeć");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("gender", answer));
+       		insert(new Attribute("płeć", answer));
        	}
 end
 

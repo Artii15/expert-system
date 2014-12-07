@@ -4,12 +4,61 @@
         "label": "Jaki rodzaj postaci masz na myśli?",
         "answers": [
             {
-                "img": "triss.jpg",
+                "img": "characters.jpg",
                 "label": "humanoid",
             },
             {
-                "img": "triss.jpg",
+                "img": "monsters.jpg",
                 "label": "potwór",
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ nie-magiczną rasę",
+        "label": "Jaka jest rasa Twojej postaci?",
+        "answers": [
+            {
+                "img": "people.jpg",
+                "label": "człowiek",
+            },
+            {
+                "img": "elves.jpg",
+                "label": "elf",
+            },
+            {
+                "img": "dwarves.jpg",
+                "label": "krasnolud",
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ magiczną rasę",
+        "label": "Jaka jest rasa Twojej postaci?",
+        "answers": [
+            {
+                "img": "people.jpg",
+                "label": "człowiek",
+            },
+            {
+                "img": "elves.jpg",
+                "label": "elf",
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ płeć",
+        "label": "Jaka jest płeć Twojej postaci?",
+        "answers": [
+            {
+                "img": "female.jpg",
+                "label": "kobieta",
+            },
+            {
+                "img": "male.jpg",
+                "label": "mężczyzna",
             }
         ],
         "multiple": false
