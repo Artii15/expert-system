@@ -357,7 +357,7 @@
             },
             {
                 "img": "scarface.jpg",
-                "label": "Wielka blizna na twarzy"
+                "label": "Duża blizna na twarzy"
             }
         ],
         "multiple": false
@@ -379,6 +379,76 @@
         "answers": [
             {
                 "img": "coen.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Geralt",
+        "label": "To wiedźmin Geralt",
+        "answers": [
+            {
+                "img": "geralt.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Eskel",
+        "label": "To wiedźmin Eskel",
+        "answers": [
+            {
+                "img": "eskel.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To bard Jaskier",
+        "label": "To bard Jaskier",
+        "answers": [
+            {
+                "img": "jaskier.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ czy to zaręczony krasnolud",
+        "label": "Czy ta postać jest zaręczona?",
+        "answers": [
+            {
+                "img": "engaged.jpg",
+                "label": "Tak"
+            },
+            {
+                "img": "no_engaged.jpg",
+                "label": "Nie"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Zoltan Chivay",
+        "label": "To krasnolud Zoltan Chivay",
+        "answers": [
+            {
+                "img": "zoltan.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Yarpen",
+        "label": "To krasnolud Yarpen Zigrin",
+        "answers": [
+            {
+                "img": "yarpen.jpg",
                 "label": ""
             }
         ],

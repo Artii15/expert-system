@@ -146,27 +146,20 @@ end
 
 rule "To Eskel"
 	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$feature : Attribute( name == "specific_feature", value == "big scar on face" )
+		Attribute( name == "mutant", value == "Tak" )
+		Attribute( name == "cecha szczególna", value == "Duża blizna na twarzy" )
 	then
-		Questionaire questionaire = new Questionaire("To wampirzyca");
+		Questionaire questionaire = new Questionaire("To Eskel");
        	questionaire.informUser();
 end
 
 rule "To Geralt"
 	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$hair : Attribute( name == "hair", value == "white" )
+		Attribute( name == "mutant", value == "Tak" )
+		Attribute( name == "cecha szczególna", value == "Białe włosy" )
 	then
-		System.out.println("It's Geralt of Rivia");
-end
-
-rule "To Vesemir"
-	when 
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$hair : Attribute( name == "hair", value == "gray" )
-	then
-		System.out.println("It's Vesemir");
+		Questionaire questionaire = new Questionaire("To Geralt");
+       	questionaire.informUser();
 end
 
 rule "Określ profesje"
@@ -287,71 +280,49 @@ rule "To Radovid"
        	questionaire.informUser();
 end
 
-rule "Determine if it's witcher"
+rule "To bard Jaskier"
 	when
-		$race : Attribute( name == "race", value == "human" )
-		$profession : Attribute( name == "profession", value == "combat" )
-		$gender : Attribute( name == "gender", value == "male" )
+		Attribute( name == "profesja", value == "kreatywność" )
+		Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "rasa", value == "człowiek" )
 	then
-		Questionaire questionaire = new Questionaire("Is he a witcher?");
-        LinkedList<String> answers = questionaire.askUser();
+		Questionaire questionaire = new Questionaire("To bard Jaskier");
+       	questionaire.informUser();
+end
+
+rule "Określ czy to zaręczony krasnolud"
+	when
+		Attribute( name == "rasa", value == "krasnolud" )
+	then
+		Questionaire questionaire = new Questionaire("Określ czy to zaręczony krasnolud");
+       	LinkedList<String> answers = questionaire.askUser();
        	
-       	for(String answer : answers) {											 
-       		insert(new Attribute("mutant", answer));
+       	for(String answer : answers) {
+       		insert(new Attribute("zaręczyny", answer));
        	}
 end
 
-rule "It's bard Jaskier"
+rule "To Zoltan Chivay"
 	when
-		$profession : Attribute( name == "profession", value == "singing" )
-		$gender : Attribute( name == "gender", value == "male" )
-		$race : Attribute( name == "race", value == "human" )
+		Attribute( name == "profesja", value == "walka" )
+		Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "rasa", value == "krasnolud" )
+		Attribute( name == "zaręczyny", value == "Tak" )
 	then
-		System.out.println("It's bard Jaskier");
+		Questionaire questionaire = new Questionaire("To Zoltan Chivay");
+       	questionaire.informUser();
 end
 
-rule "Determine if it's engaged dwarf"
+rule "To Yarpen"
 	when
-		$race : Attribute( name == "race", value == "dwarf" )
+		Attribute( name == "profesja", value == "walka" )
+		Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "rasa", value == "krasnolud" )
+		Attribute( name == "zaręczyny", value == "Nie" )
 	then
-		Questionaire questionaire = new Questionaire("Is your character engaged?");
-        LinkedList<String> answers = questionaire.askUser();
-       	
-       	for(String answer : answers) {											 
-       		insert(new Attribute("engaged", answer));
-       	}
+		Questionaire questionaire = new Questionaire("To Yarpen");
+       	questionaire.informUser();
 end
-
-rule "It's Zoltan Chivay"
-	when
-		$profession : Attribute( name == "profession", value == "combat" )
-		$gender : Attribute( name == "gender", value == "male" )
-		$race : Attribute( name == "race", value == "dwarf" )
-		$engaged : Attribute( name == "engaged", value == "yes" )
-	then
-		System.out.println("It's Zoltan Chivay");
-end
-
-rule "It's Yarpen"
-	when
-		$profession : Attribute( name == "profession", value == "combat" )
-		$gender : Attribute( name == "gender", value == "male" )
-		$race : Attribute( name == "race", value == "dwarf" )
-		$engaged : Attribute( name == "engaged", value == "no" )
-	then
-		System.out.println("It's Yarpen Zigrin");
-end
-
-rule "It's Eudora Breckenrigs"
-	when
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "dwarf" )
-		$engaged : Attribute( name == "engaged", value == "yes" )
-		$profession : Attribute( name == "profession", value == "unknown" )
-	then
-		System.out.println("It's Eudora Breckenrigs");
-end
-
 
 rule "Określ czy romansowała z Geraltem"
 	when 
