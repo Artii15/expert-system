@@ -359,14 +359,13 @@ rule "To Filippa Eilhart"
        	questionaire.informUser();
 end
 
-rule "It's Sabrina Glevisig"
+rule "To Sabrina Glevissig"
 	when 
-		$serves : Attribute( name == "served_in", value == "Kaedwen" )
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "no" )
+		Attribute( name == "doradza", value == "Henselt" ) 
+		Attribute( name == "płeć", value == "kobieta" )
 	then
-		System.out.println("It's Sabrina Glevisig");
+		Questionaire questionaire = new Questionaire("To Sabrina Glevissig");
+       	questionaire.informUser();
 end
 
 rule "It's Fringilla Vigo"
@@ -389,14 +388,15 @@ rule "To Triss"
        	questionaire.informUser();
 end
 
-rule "It's Yennefer"
+rule "To Yennefer"
 	when 
-		$serves : Attribute( (name == "served_in" && value == "no") || (name == "hair" && value == "black") )
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "yes" )
+		not Attribute( name == "doradza" ) 
+		Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "romans", value == "tak" )
+		Attribute( name == "profesja", value == "magia" )
 	then
-		System.out.println("It's Yennefer");
+		Questionaire questionaire = new Questionaire("To Yennefer");
+       	questionaire.informUser();
 end
 
 rule "Determine Geralt's familiar sorceress hair color"

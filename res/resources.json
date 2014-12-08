@@ -465,4 +465,26 @@
         ],
         "multiple": false
     },
+    {
+        "rule": "To Sabrina Glevissig",
+        "label": "To Sabrina Glevissig",
+        "answers": [
+            {
+                "img": "sabrina.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Yennefer",
+        "label": "To Yennefer z Vengerbergu",
+        "answers": [
+            {
+                "img": "yen.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
 ]
