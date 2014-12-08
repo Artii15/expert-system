@@ -24,7 +24,6 @@ end
 rule "Określ rasę"
 	when
 		$rodzaj : Attribute( name == "rodzaj", value == "humanoid" )
-		not $potwor : Attribute( name == "rodzaj", value == "potwór" )
 	then
 		Questionaire questionaire = new Questionaire("Określ rasę");
 		LinkedList<String> answers = questionaire.askUser();
@@ -46,27 +45,23 @@ rule "Określ płeć"
        	}
 end
 
-rule "Określ szczególną cechę hybrydy (mężczyzna)"
+rule "Określ typ potwora"
 	when
-		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
-		$potwor : Attribute( name == "rodzaj", value == "potwór" )
-		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "rodzaj", value == "potwór" )
 	then
-		Questionaire questionaire = new Questionaire("Określ szczególną cechę hybrydy (mężczyzna)");
+		Questionaire questionaire = new Questionaire("Określ typ potwora");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("cecha szczególna", answer));
+       		insert(new Attribute("typ potwora", answer));
        	}
 end
 
-rule "Określ szczególną cechę hybrydy (kobieta)"
+rule "Określ szczególną cechę potwora"
 	when
-		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
-		$potwor : Attribute( name == "rodzaj", value == "potwór" )
-		$plec : Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "rodzaj", value == "potwór" )
 	then
-		Questionaire questionaire = new Questionaire("Określ szczególną cechę hybrydy (kobieta)");
+		Questionaire questionaire = new Questionaire("Określ szczególną cechę potwora");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
@@ -76,7 +71,7 @@ end
 
 rule "To wampir"
 	when
-		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "cecha szczególna", value == "Pije krew")
 	then
 		Questionaire questionaire = new Questionaire("To wampir");
@@ -85,7 +80,7 @@ end
 
 rule "To wilkołak"
 	when
-		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca")
 	then
 		Questionaire questionaire = new Questionaire("To wilkołak");
@@ -94,18 +89,10 @@ end
 
 rule "To sukkub"
 	when
+		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "cecha szczególna", value == "Wysysa siły witalne")
 	then
 		Questionaire questionaire = new Questionaire("To sukkub");
-       	questionaire.informUser();
-end
-
-rule "To wampirzyca"
-	when
-		Attribute( name == "płeć", value == "kobieta")
-		Attribute( name == "cecha szczególna", value == "Pije krew")
-	then
-		Questionaire questionaire = new Questionaire("To wampirzyca");
        	questionaire.informUser();
 end
 

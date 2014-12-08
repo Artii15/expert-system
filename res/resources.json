@@ -255,24 +255,13 @@
         "multiple": true
     },
     {
-        "rule": "Określ szczególną cechę hybrydy (mężczyzna)",
+        "rule": "Określ szczególną cechę potwora",
         "label": "Co charakteryzuje tą postać?",
         "answers": [
             {
                 "img": "moon.jpg",
                 "label": "Reaguje na pełnię księżyca"
             },
-            {
-                "img": "blood.jpg",
-                "label": "Pije krew"
-            }
-        ],
-        "multiple": false
-    },
-    {
-        "rule": "Określ szczególną cechę hybrydy (kobieta)",
-        "label": "Co charakteryzuje tą postać?",
-        "answers": [
             {
                 "img": "force_drain.jpg",
                 "label": "Wysysa siły witalne"
@@ -289,7 +278,7 @@
         "label": "To wampir",
         "answers": [
             {
-                "img": "vampire.jpg",
+                "img": "vampire_female.jpg",
                 "label": ""
             }
         ],
@@ -312,17 +301,6 @@
         "answers": [
             {
                 "img": "sukkub.jpg",
-                "label": ""
-            }
-        ],
-        "multiple": false
-    },
-    {
-        "rule": "To wampirzyca",
-        "label": "To wampirzyca",
-        "answers": [
-            {
-                "img": "vampire_female.jpg",
                 "label": ""
             }
         ],
@@ -517,6 +495,21 @@
             {
                 "img": "ciri.jpg",
                 "label": ""
+            }
+        ],
+        "multiple": false
+    }
+    {
+        "rule": "Określ typ potwora",
+        "label": "Jakiego rodzaju jest ten potwór?"
+        "answers": [
+            {
+                "img": "intelligent.jpg",
+                "label": "inteligentny"
+            },
+            {
+                "img": "primitive.jpg",
+                "label": "prymitywny"
             }
         ],
         "multiple": false
