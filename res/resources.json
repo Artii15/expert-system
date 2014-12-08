@@ -487,4 +487,34 @@
         ],
         "multiple": false
     },
+    {
+        "rule": "Określ kolor włosów kobiety",
+        "label": "Jaki jest kolor jej włosów",
+        "answers": [
+            {
+                "img": "ashen_hair.jpg",
+                "label": "popielate"
+            },
+            {
+                "img": "black_hair.jpg",
+                "label": "czarne"
+            },
+            {
+                "img": "red_hair.jpg",
+                "label": "rude"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Ciri",
+        "label": "To Ciri - czarodziejka, wiedźminka",
+        "answers": [
+            {
+                "img": "ciri.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    }
 ]

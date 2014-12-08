@@ -368,16 +368,6 @@ rule "To Sabrina Glevissig"
        	questionaire.informUser();
 end
 
-rule "It's Fringilla Vigo"
-	when 
-		$serves : Attribute( (name == "served_in" && value == "Nilfgard") || (name == "hair" && value == "short")  )
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "yes" )
-	then
-		System.out.println("It's Sabrina Glevisig");
-end
-
 rule "To Triss"
 	when 
 		Attribute( name == "doradza", value == "Foltest" ) 
@@ -399,39 +389,33 @@ rule "To Yennefer"
        	questionaire.informUser();
 end
 
-rule "Determine Geralt's familiar sorceress hair color"
+rule "Określ kolor włosów kobiety"
 	when 
-		$romanced : Attribute( name == "romanced_geralt", value == "yes" )
-		$served_in : Attribute( name == "served_in", value == "dont know" )
+		Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "płeć", value == "kobieta" )
 	then
-		Questionaire questionaire = new Questionaire("What is her hair like?");
+		Questionaire questionaire = new Questionaire("Określ kolor włosów kobiety");
         LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {											 
-       		insert(new Attribute("hair", answer));
+       		insert(new Attribute("kolor włosów", answer));
        	}
 end
 
-rule "Determine woman's hair color"
+rule "To Ciri"
 	when 
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
+		not Attribute( name == "doradza" ) 
+		Attribute( name == "płeć", value == "kobieta" )
+		(or
+			Attribute( name == "romans", value == "nie" )
+			not Attribute( name == "romans" )
+		)
+		(or
+			Attribute( name == "profesja", value == "magia" )
+			Attribute( name == "profesja", value == "walka" )
+		)
+		Attribute( name == "kolor włosów", value == "popielate" )
 	then
-		Questionaire questionaire = new Questionaire("What is her hair like?");
-        LinkedList<String> answers = questionaire.askUser();
-       	
-       	for(String answer : answers) {											 
-       		insert(new Attribute("hair", answer));
-       	}
-end
-
-rule "It's Ciri"
-	when
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "no" )
-		$profession : Attribute( (name == "profession") && (value == "combat" || value == "magic") )
-		$hair : Attribute( name == "hair", value == "ashen" )
-	then
-		System.out.println("It's Ciri of Cintra");
+		Questionaire questionaire = new Questionaire("To Ciri");
+       	questionaire.informUser();
 end
