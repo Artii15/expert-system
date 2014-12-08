@@ -12,7 +12,7 @@
                 "label": "potwór"
             }
         ],
-        "multiple": true
+        "multiple": false
     },
     {
         "rule": "Określ rasę",
@@ -252,7 +252,7 @@
                 "label": "Radovid"
             }
         ],
-        "multiple": false
+        "multiple": true
     },
     {
         "rule": "Określ szczególną cechę hybrydy (mężczyzna)",

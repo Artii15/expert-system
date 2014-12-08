@@ -404,7 +404,6 @@ end
 
 rule "To Ciri"
 	when 
-		not Attribute( name == "doradza" ) 
 		Attribute( name == "płeć", value == "kobieta" )
 		(or
 			Attribute( name == "romans", value == "nie" )
