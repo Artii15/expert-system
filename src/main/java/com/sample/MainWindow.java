@@ -77,7 +77,6 @@ public class MainWindow extends JFrame{
 		for(Answer answer : questionData.answers) {
 			addAnswer(answer, group);
 		}
-
 		this.confirmButton.setVisible(true);
 		this.pack();
 		this.repaint();

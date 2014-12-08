@@ -12,7 +12,7 @@
                 "label": "potwór"
             }
         ],
-        "multiple": false
+        "multiple": true
     },
     {
         "rule": "Określ rasę",
@@ -255,11 +255,130 @@
         "multiple": false
     },
     {
+        "rule": "Określ szczególną cechę hybrydy (mężczyzna)",
+        "label": "Co charakteryzuje tą postać?",
+        "answers": [
+            {
+                "img": "moon.jpg",
+                "label": "Reaguje na pełnię księżyca"
+            },
+            {
+                "img": "blood.jpg",
+                "label": "Pije krew"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ szczególną cechę hybrydy (kobieta)",
+        "label": "Co charakteryzuje tą postać?",
+        "answers": [
+            {
+                "img": "force_drain.jpg",
+                "label": "Wysysa siły witalne"
+            },
+            {
+                "img": "blood.jpg",
+                "label": "Pije krew"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To wampir",
+        "label": "To wampir",
+        "answers": [
+            {
+                "img": "vampire.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To wilkołak",
+        "label": "To wilkołak",
+        "answers": [
+            {
+                "img": "werewolf.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To sukkub",
+        "label": "To sukkub",
+        "answers": [
+            {
+                "img": "sukkub.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To wampirzyca",
+        "label": "To wampirzyca",
+        "answers": [
+            {
+                "img": "vampire_female.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ czy jest mutantem",
+        "label": "Czy jest mutantem?",
+        "answers": [
+            {
+                "img": "mutant.jpg",
+                "label": "Tak"
+            },
+            {
+                "img": "no_mutant.jpg",
+                "label": "Nie"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ cechę szczególną wiedźmina",
+        "label": "Jaka jest jego cecha szczególna",
+        "answers": [
+            {
+                "img": "yellow_eyes.jpg",
+                "label": "Żółte oczy"
+            },
+            {
+                "img": "white_hair.jpg",
+                "label": "Białe włosy"
+            },
+            {
+                "img": "scarface.jpg",
+                "label": "Wielka blizna na twarzy"
+            }
+        ],
+        "multiple": false
+    },
+    {
         "rule": "To Triss",
         "label": "To Triss Merigold",
         "answers": [
             {
                 "img": "triss.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To Coen",
+        "label": "To wiedźmin Coen",
+        "answers": [
+            {
+                "img": "coen.jpg",
                 "label": ""
             }
         ],

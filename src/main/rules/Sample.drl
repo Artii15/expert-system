@@ -24,6 +24,7 @@ end
 rule "Określ rasę"
 	when
 		$rodzaj : Attribute( name == "rodzaj", value == "humanoid" )
+		not $potwor : Attribute( name == "rodzaj", value == "potwór" )
 	then
 		Questionaire questionaire = new Questionaire("Określ rasę");
 		LinkedList<String> answers = questionaire.askUser();
@@ -35,7 +36,7 @@ end
 
 rule "Określ płeć"
 	when
-		$kind : Attribute( name == "rodzaj", value == "humanoid" )
+		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("Określ płeć");
        	LinkedList<String> answers = questionaire.askUser();
@@ -45,59 +46,133 @@ rule "Określ płeć"
        	}
 end
 
-rule "Określ kolor włosów wiedźmina" 
+rule "Określ szczególną cechę hybrydy (mężczyzna)"
 	when
-		$kind : Attribute( name == "rodzaj", value == "humanoid" )
-		$mutant : Attribute( name == "mutant", value == "yes" )
+		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
+		$potwor : Attribute( name == "rodzaj", value == "potwór" )
+		$plec : Attribute( name == "płeć", value == "mężczyzna" )
 	then
-		Questionaire questionaire = new Questionaire("What is character's hair color?");
+		Questionaire questionaire = new Questionaire("Określ szczególną cechę hybrydy (mężczyzna)");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("hair", answer));
+       		insert(new Attribute("cecha szczególna", answer));
        	}
 end
 
-rule "Determine witchers specific feature"
+rule "Określ szczególną cechę hybrydy (kobieta)"
 	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$hair : Attribute( name == "hair", value == "dark" )
+		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
+		$potwor : Attribute( name == "rodzaj", value == "potwór" )
+		$plec : Attribute( name == "płeć", value == "kobieta" )
 	then
-		Questionaire questionaire = new Questionaire("What is witcher's specific feature?");
+		Questionaire questionaire = new Questionaire("Określ szczególną cechę hybrydy (kobieta)");
        	LinkedList<String> answers = questionaire.askUser();
        	
        	for(String answer : answers) {
-       		insert(new Attribute("specific_feature", answer));
+       		insert(new Attribute("cecha szczególna", answer));
        	}
 end
 
-rule "It's Lambert"
+rule "To wampir"
 	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$feature : Attribute( name == "specific_feature", value == "irony" )
+		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "cecha szczególna", value == "Pije krew")
 	then
-		System.out.println("It's Lambert");
+		Questionaire questionaire = new Questionaire("To wampir");
+       	questionaire.informUser();
 end
 
-rule "It's Coen"
+rule "To wilkołak"
 	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$feature : Attribute( name == "specific_feature", value == "yellow eyes" )
+		$plec : Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca")
 	then
-		System.out.println("It's Coen");
+		Questionaire questionaire = new Questionaire("To wilkołak");
+       	questionaire.informUser();
 end
 
-rule "It's Eskel"
+rule "To sukkub"
+	when
+		Attribute( name == "cecha szczególna", value == "Wysysa siły witalne")
+	then
+		Questionaire questionaire = new Questionaire("To sukkub");
+       	questionaire.informUser();
+end
+
+rule "To wampirzyca"
+	when
+		Attribute( name == "płeć", value == "kobieta")
+		Attribute( name == "cecha szczególna", value == "Pije krew")
+	then
+		Questionaire questionaire = new Questionaire("To wampirzyca");
+       	questionaire.informUser();
+end
+
+rule "Określ czy jest mutantem"
+	when
+		Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "płeć", value == "mężczyzna" )
+		Attribute( name == "profesja", value == "walka" )
+	then
+		Questionaire questionaire = new Questionaire("Określ czy jest mutantem");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("mutant", answer));
+       	}
+end
+
+rule "Określ cechę szczególną wiedźmina"
+	when
+		Attribute( name == "mutant", value == "Tak" )
+	then
+		Questionaire questionaire = new Questionaire("Określ cechę szczególną wiedźmina");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("cecha szczególna", answer));
+       	}
+end
+
+rule "To Coen"
+	when
+		Attribute( name == "mutant", value == "Tak" )
+		Attribute( name == "cecha szczególna", value == "Żółte oczy" )
+	then
+		Questionaire questionaire = new Questionaire("To Coen");
+       	questionaire.informUser();
+end
+
+rule "To Eskel"
 	when
 		$mutant : Attribute( name == "mutant", value == "yes" )
 		$feature : Attribute( name == "specific_feature", value == "big scar on face" )
 	then
-		System.out.println("It's Eskel");
+		Questionaire questionaire = new Questionaire("To wampirzyca");
+       	questionaire.informUser();
+end
+
+rule "To Geralt"
+	when
+		$mutant : Attribute( name == "mutant", value == "yes" )
+		$hair : Attribute( name == "hair", value == "white" )
+	then
+		System.out.println("It's Geralt of Rivia");
+end
+
+rule "To Vesemir"
+	when 
+		$mutant : Attribute( name == "mutant", value == "yes" )
+		$hair : Attribute( name == "hair", value == "gray" )
+	then
+		System.out.println("It's Vesemir");
 end
 
 rule "Określ profesje"
 	when
-		$kind : Attribute( name == "rodzaj", value == "humanoid" )
+		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
+		not $potwór : Attribute( name == "rodzaj", value == "potwór" )
 	then
 		Questionaire questionaire = new Questionaire("Określ profesje");
        	LinkedList<String> answers = questionaire.askUser();
@@ -224,22 +299,6 @@ rule "Determine if it's witcher"
        	for(String answer : answers) {											 
        		insert(new Attribute("mutant", answer));
        	}
-end
-
-rule "It's Geralt"
-	when
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$hair : Attribute( name == "hair", value == "white" )
-	then
-		System.out.println("It's Geralt of Rivia");
-end
-
-rule "It's Vesemir"
-	when 
-		$mutant : Attribute( name == "mutant", value == "yes" )
-		$hair : Attribute( name == "hair", value == "gray" )
-	then
-		System.out.println("It's Vesemir");
 end
 
 rule "It's bard Jaskier"
