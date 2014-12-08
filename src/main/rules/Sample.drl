@@ -247,7 +247,7 @@ end
 
 rule "To Esterad Thyssen"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Kovir" )
+		Attribute( name == "zarządzane państwo", value == "Kovir" )
 	then
 		Questionaire questionaire = new Questionaire("To Esterad Thyssen");
        	questionaire.informUser();
@@ -255,7 +255,7 @@ end
 
 rule "To Emhyr"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Nilfgaard" )
+		Attribute( name == "zarządzane państwo", value == "Nilfgaard" )
 	then
 		Questionaire questionaire = new Questionaire("To Emhyr");
        	questionaire.informUser();
@@ -263,7 +263,7 @@ end
 
 rule "To Henselt"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Kaedwen" )
+		Attribute( name == "zarządzane państwo", value == "Kaedwen" )
 	then
 		Questionaire questionaire = new Questionaire("To Henselt");
        	questionaire.informUser();
@@ -271,7 +271,7 @@ end
 
 rule "To Demawend"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Aedirn" )
+		Attribute( name == "zarządzane państwo", value == "Aedirn" )
 	then
 		Questionaire questionaire = new Questionaire("To Demawend");
        	questionaire.informUser();
@@ -279,7 +279,7 @@ end
 
 rule "To Foltest"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Temeria" )
+		Attribute( name == "zarządzane państwo", value == "Temeria" )
 	then
 		Questionaire questionaire = new Questionaire("To Foltest");
        	questionaire.informUser();
@@ -287,7 +287,7 @@ end
 
 rule "To Radovid"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Redania" )
+		Attribute( name == "zarządzane państwo", value == "Redania" )
 	then
 		Questionaire questionaire = new Questionaire("To Radovid");
        	questionaire.informUser();
@@ -298,6 +298,9 @@ rule "To bard Jaskier"
 		Attribute( name == "profesja", value == "twórczość" )
 		Attribute( name == "płeć", value == "mężczyzna" )
 		Attribute( name == "rasa", value == "człowiek" )
+		not Attribute( name == "profesja", value == "walka" )
+		not Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
 	then
 		Questionaire questionaire = new Questionaire("To bard Jaskier");
        	questionaire.informUser();
@@ -321,6 +324,9 @@ rule "To Zoltan Chivay"
 		Attribute( name == "płeć", value == "mężczyzna" )
 		Attribute( name == "rasa", value == "krasnolud" )
 		Attribute( name == "zaręczyny", value == "Tak" )
+		not Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+		not Attribute( name == "profesja", value == "twórczość" )
 	then
 		Questionaire questionaire = new Questionaire("To Zoltan Chivay");
        	questionaire.informUser();
@@ -332,6 +338,9 @@ rule "To Yarpen"
 		Attribute( name == "płeć", value == "mężczyzna" )
 		Attribute( name == "rasa", value == "krasnolud" )
 		Attribute( name == "zaręczyny", value == "Nie" )
+		not Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+		not Attribute( name == "profesja", value == "twórczość" )
 	then
 		Questionaire questionaire = new Questionaire("To Yarpen");
        	questionaire.informUser();
@@ -339,8 +348,8 @@ end
 
 rule "Określ czy romansowała z Geraltem"
 	when 
-		$plec : Attribute( name == "płeć", value == "kobieta" )
-		$race : Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "rasa", value == "człowiek" )
 	then
 		Questionaire questionaire = new Questionaire("Określ czy romansowała z Geraltem");
         LinkedList<String> answers = questionaire.askUser();
@@ -352,8 +361,8 @@ end
 
 rule "Określ czy doradza jakiemuś królowi"
 	when 
-		$race : Attribute( name == "rasa", value == "człowiek" )
-		$profesja : Attribute( name == "profesja", value == "magia" )
+		Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "profesja", value == "magia" )
 	then
 		Questionaire questionaire = new Questionaire("Określ czy doradza jakiemuś królowi");
         LinkedList<String> answers = questionaire.askUser();
@@ -364,9 +373,27 @@ rule "Określ czy doradza jakiemuś królowi"
 end
 
 rule "To Filippa Eilhart"
-	when 
-		Attribute( name == "doradza", value == "Radovid" ) 
+	when  
 		Attribute( name == "płeć", value == "kobieta" )
+		not Attribute( name == "profesja", value == "twórczość" )
+		(or 
+			not Attribute( name == "romans" )
+			Attribute( name == "romans", value == "nie" )
+		)
+		(or 
+			not Attribute( name == "kolor włosów" )
+			Attribute( name == "kolor włosów", value == "czarne" )
+		)
+		(or
+			(and 
+				Attribute( name == "zarządzane państwo", value == "Redania" )
+				not Attribute( name == "doradza" )
+			)
+			(and
+				not Attribute( name == "zarządzane państwo" )
+				Attribute( name == "doradza", value == "Radovid" )
+			)
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Filippa Eilhart");
        	questionaire.informUser();

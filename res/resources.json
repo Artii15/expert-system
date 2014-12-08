@@ -115,6 +115,10 @@
                 "label": "Lyria i Rivia"
             },
             {
+                "img": "redania.jpg",
+                "label": "Redania"
+            },
+            {
                 "img": "dol_blathanna.jpg",
                 "label": "Dol Blathanna"
             }
