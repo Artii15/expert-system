@@ -101,6 +101,9 @@ rule "Określ czy jest mutantem"
 		Attribute( name == "rasa", value == "człowiek" )
 		Attribute( name == "płeć", value == "mężczyzna" )
 		Attribute( name == "profesja", value == "walka" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+		not Attribute( name == "profesja", value == "twórczość" )
+		not Attribute( name == "doradza" )
 	then
 		Questionaire questionaire = new Questionaire("Określ czy jest mutantem");
        	LinkedList<String> answers = questionaire.askUser();
@@ -151,8 +154,7 @@ end
 
 rule "Określ profesje"
 	when
-		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
-		not $potwór : Attribute( name == "rodzaj", value == "potwór" )
+		Attribute( name == "rodzaj", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("Określ profesje");
        	LinkedList<String> answers = questionaire.askUser();
@@ -164,10 +166,10 @@ end
 
 rule "Określ którymi państwami włada (mężczyzna)"
 	when
-		$profesja : Attribute( name == "profesja", value == "sprawowanie władzy" )
-		$rasa : Attribute( name == "rasa", value == "człowiek" )
-		$plec : Attribute( name == "płeć", value == "mężczyzna" )
-		
+		Attribute( name == "profesja", value == "sprawowanie władzy" )
+		Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "płeć", value == "mężczyzna" )
+		not Attribute( name == "profesja", value == "magia" )
 	then
 		Questionaire questionaire = new Questionaire("Określ którymi państwami włada (mężczyzna)");
        	LinkedList<String> answers = questionaire.askUser();
@@ -179,9 +181,9 @@ end
 
 rule "Określ którymi państwami włada (kobieta)"
 	when
-		$profesja : Attribute( name == "profesja", value == "sprawowanie władzy" )
-		$rasa : Attribute( name == "rasa", value != "krasnolud" )
-		$plec : Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "profesja", value == "sprawowanie władzy" )
+		Attribute( name == "rasa", value != "krasnolud" )
+		Attribute( name == "płeć", value == "kobieta" )
 
 	then
 		Questionaire questionaire = new Questionaire("Określ którymi państwami włada (kobieta)");
@@ -212,8 +214,17 @@ end
 
 rule "To Calanthe"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Cintra" )
-		$rasa : Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "zarządzane państwo", value == "Cintra" )
+		Attribute( name == "rasa", value == "człowiek" )
+		not Attribute( name == "profesja", value == "magia" )
+		(or
+			Attribute( name == "kolor włosów", value == "popielate" )
+			Attribute( name == "kolor włosów" )
+		)
+		(or
+			not Attribute( name == "romans" )
+			Attribute( name == "romans", value == "nie" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Calanthe");
        	questionaire.informUser();
@@ -221,8 +232,14 @@ end
 
 rule "To Francesca Findabair"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
-		$rasa : Attribute( name == "rasa", value == "elf" )
+		(or
+			Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
+			not Attribute( name == "zarządzane państwo" )
+		)
+		Attribute( name == "rasa", value == "elf" )
+		Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "profesja", value == "magia" )
+		Attribute( name == "profesja", value == "sprawowanie władzy" )
 	then
 		Questionaire questionaire = new Questionaire("To Francesca Findabair");
        	questionaire.informUser();

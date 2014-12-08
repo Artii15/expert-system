@@ -237,7 +237,7 @@
     },
     {
         "rule": "Określ czy doradza jakiemuś królowi",
-        "label": "Czy doradza któremuś z tych królów?",
+        "label": "Czy jest doradcą któregoś z tych królów?",
         "answers": [
             {
                 "img": "henselt.jpg",
