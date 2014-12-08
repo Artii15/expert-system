@@ -207,8 +207,17 @@ end
 
 rule "To Meve"
 	when
-		$panstwo : Attribute( name == "zarządzane państwo", value == "Lyria i Rivia" )
-		$rasa : Attribute( name == "rasa", value == "człowiek" )
+		Attribute( name == "rasa", value == "człowiek" )
+		not Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "profesja", value == "twórczość" )
+		(or
+			not Attribute( name == "romans" )
+			Attribute( name == "romans", value == "nie" )
+		)
+		(or
+			not Attribute( name == "kolor włosów" )
+			Attribute( name == "kolor włosów", value == "białe" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Meve");
        	questionaire.informUser();
@@ -282,7 +291,7 @@ end
 
 rule "To bard Jaskier"
 	when
-		Attribute( name == "profesja", value == "kreatywność" )
+		Attribute( name == "profesja", value == "twórczość" )
 		Attribute( name == "płeć", value == "mężczyzna" )
 		Attribute( name == "rasa", value == "człowiek" )
 	then
@@ -380,10 +389,12 @@ end
 
 rule "To Yennefer"
 	when 
-		not Attribute( name == "doradza" ) 
 		Attribute( name == "płeć", value == "kobieta" )
-		Attribute( name == "romans", value == "tak" )
 		Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "doradza" ) 
+		Attribute( name == "romans", value == "tak" )
+		
+		Attribute( name == "kolor włosów", value == "czarne" )
 	then
 		Questionaire questionaire = new Questionaire("To Yennefer");
        	questionaire.informUser();
@@ -404,7 +415,10 @@ end
 
 rule "To Ciri"
 	when 
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+		not Attribute( name == "profesja", value == "twórczość" )
 		Attribute( name == "płeć", value == "kobieta" )
+		Attribute( name == "kolor włosów", value == "popielate" )
 		(or
 			Attribute( name == "romans", value == "nie" )
 			not Attribute( name == "romans" )
@@ -413,7 +427,6 @@ rule "To Ciri"
 			Attribute( name == "profesja", value == "magia" )
 			Attribute( name == "profesja", value == "walka" )
 		)
-		Attribute( name == "kolor włosów", value == "popielate" )
 	then
 		Questionaire questionaire = new Questionaire("To Ciri");
        	questionaire.informUser();

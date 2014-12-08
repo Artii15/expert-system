@@ -62,7 +62,7 @@
             },
             {
                 "img": "creativity.jpg",
-                "label": "kreatywność"
+                "label": "twórczość"
             },
             {
                 "img": "governance.jpg",
@@ -498,6 +498,10 @@
             {
                 "img": "black_hair.jpg",
                 "label": "czarne"
+            },
+            {
+                "img": "white_hair.jpg",
+                "label": "białe"
             },
             {
                 "img": "red_hair.jpg",
