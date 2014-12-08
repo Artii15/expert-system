@@ -486,6 +486,10 @@
                 "label": "białe"
             },
             {
+                "img": "bronze_hair.jpg",
+                "label": "brązowe"
+            },
+            {
                 "img": "red_hair.jpg",
                 "label": "rude"
             }

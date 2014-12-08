@@ -403,16 +403,69 @@ rule "To Sabrina Glevissig"
 	when 
 		Attribute( name == "doradza", value == "Henselt" ) 
 		Attribute( name == "płeć", value == "kobieta" )
+		not Attribute( name == "profesja", value == "twórczość" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+		(or 
+			Attribute( name == "kolor włosów", value == "brązowe" )
+			not Attribute( name == "kolor włosów" )
+		)
+		(or 
+			not Attribute( name == "romans" )
+			Attribute( name == "romans", value == "nie" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Sabrina Glevissig");
        	questionaire.informUser();
 end
 
-rule "To Triss"
-	when 
-		Attribute( name == "doradza", value == "Foltest" ) 
-		Attribute( name == "płeć", value == "kobieta" )
-		Attribute( name == "romans", value == "tak" )
+rule "To Triss1"
+	when  
+		Attribute( name == "kolor włosów", value == "rude" )
+		(or
+			not Attribute( name == "doradza" )
+			Attribute( name == "doradza", value == "Foltest" )
+		)
+		(or
+			not Attribute( name == "romans" )
+			Attribute( name == "romans", value == "tak" )
+		)
+		Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "profesja", value == "twórczość" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+	then
+		Questionaire questionaire = new Questionaire("To Triss");
+       	questionaire.informUser();
+end
+
+rule "To Triss2"
+	when  
+		Attribute( name == "doradza", value == "Foltest" )
+		(or
+			Attribute( name == "kolor włosów", value == "rude" )
+			not Attribute( name == "kolor włosów" )
+		)
+		(or
+			Attribute( name == "romans", value == "tak" )
+			not Attribute( name == "romans" )
+		)
+			
+		not Attribute( name == "profesja", value == "twórczość" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
+	then
+		Questionaire questionaire = new Questionaire("To Triss");
+       	questionaire.informUser();
+end
+
+rule "To Triss3"
+	when  
+		Attribute( name == "romans", value == "tak" )		
+		(or
+			Attribute( name == "kolor włosów", value == "rude" )
+			Attribute( name == "doradza", value == "Foltest" )
+		)
+		
+		not Attribute( name == "profesja", value == "twórczość" )
+		not Attribute( name == "profesja", value == "sprawowanie władzy" )
 	then
 		Questionaire questionaire = new Questionaire("To Triss");
        	questionaire.informUser();
