@@ -454,4 +454,15 @@
         ],
         "multiple": false
     },
+    {
+        "rule": "To Filippa Eilhart",
+        "label": "To Filippa Eilhart",
+        "answers": [
+            {
+                "img": "filippa.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
 ]

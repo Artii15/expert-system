@@ -350,14 +350,13 @@ rule "Określ czy doradza jakiemuś królowi"
        	}
 end
 
-rule "It's Filippa Eihlhart"
+rule "To Filippa Eilhart"
 	when 
-		$serves : Attribute( name == "served_in", value == "Redania" )
-		$gender : Attribute( name == "gender", value == "female" )
-		$race : Attribute( name == "race", value == "human" )
-		$romanced : Attribute( name == "romanced_geralt", value == "no" )
+		Attribute( name == "doradza", value == "Radovid" ) 
+		Attribute( name == "płeć", value == "kobieta" )
 	then
-		System.out.println("It's Filippa Eihlhart");
+		Questionaire questionaire = new Questionaire("To Filippa Eilhart");
+       	questionaire.informUser();
 end
 
 rule "It's Sabrina Glevisig"
