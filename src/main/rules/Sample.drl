@@ -45,6 +45,47 @@ rule "Określ płeć"
        	}
 end
 
+rule "Określ gatunek dowolnego potwora"
+	when
+		not Attribute( name == "gatunek" )
+		Attribute( name == "rodzaj", value == "potwór" )
+	then
+		Questionaire questionaire = new Questionaire("Określ gatunek dowolnego potwora");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("gatunek", answer));
+       	}
+end
+
+rule "Określ gatunek inteligentnego potwora"
+	when
+		not Attribute( name == "gatunek" )
+		Attribute( name == "rodzaj", value == "potwór" )
+		Attribute( name == "typ potwora", value == "inteligentny")
+	then
+		Questionaire questionaire = new Questionaire("Określ gatunek inteligentnego potwora");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("gatunek", answer));
+       	}
+end
+
+rule "Określ gatunek prymitywnego potwora"
+	when
+		not Attribute( name == "gatunek" )
+		Attribute( name == "rodzaj", value == "potwór" )
+		Attribute( name == "typ potwora", value == "prymitywny")
+	then
+		Questionaire questionaire = new Questionaire("Określ gatunek prymitywnego potwora");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("gatunek", answer));
+       	}
+end
+
 rule "Określ typ potwora"
 	when
 		Attribute( name == "rodzaj", value == "potwór" )

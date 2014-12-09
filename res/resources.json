@@ -532,5 +532,70 @@
             }
         ],
         "multiple": false
-    }
+    },
+    {
+        "rule": "Określ gatunek dowolnego potwora",
+        "label": "Jaki jest jego gatunek?"
+        "answers": [
+            {
+                "img": "ghoul.jpg",
+                "label": "upiór"
+            },
+            {
+                "img": "insectoid.jpg",
+                "label": "insektoid"
+            },
+            {
+                "img": "lykantrop.jpg",
+                "label": "lykantrop"
+            },
+            {
+                "img": "man_eater.jpg",
+                "label": "trupojad"
+            },
+            {
+                "img": "other.jpg",
+                "label": "inny"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ gatunek inteligentnego potwora",
+        "label": "Jaki jest jego gatunek?"
+        "answers": [
+            {
+                "img": "ghoul.jpg",
+                "label": "upiór"
+            },
+            {
+                "img": "lykantrop.jpg",
+                "label": "lykantrop"
+            },
+            {
+                "img": "other.jpg",
+                "label": "inny"
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "Określ gatunek prymitywnego potwora",
+        "label": "Jaki jest jego gatunek?"
+        "answers": [
+            {
+                "img": "ghoul.jpg",
+                "label": "upiór"
+            },
+            {
+                "img": "insectoid.jpg",
+                "label": "insektoid"
+            },
+            {
+                "img": "man_eater.jpg",
+                "label": "trupojad"
+            }
+        ],
+        "multiple": false
+    },
 ]
