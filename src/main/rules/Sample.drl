@@ -281,6 +281,14 @@ rule "To wilkołak"
 	when
 		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca")
+		(or
+			Attribute( name == "gatunek", value == "lykantrop" )
+			not Attribute( name == "gatunek", value == "lykantrop" )
+		)
+		not Attribute( name == "podatność", value != "srebro" ) 
+		
+		not Attribute( name == "cecha szczególna", value == "Wysysa siły witalne")
+		not Attribute( name == "cecha szczególna", value == "Pije krew")
 	then
 		Questionaire questionaire = new Questionaire("To wilkołak");
        	questionaire.informUser();
@@ -290,6 +298,9 @@ rule "To sukkub"
 	when
 		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "cecha szczególna", value == "Wysysa siły witalne")
+		not Attribute( name == "gatunek", value != "inny" )
+		not Attribute( name == "podatność", value != "srebro" )
+		not Attribute( name == "cecha szczególna", value != "Wysysa siły witalne" )
 	then
 		Questionaire questionaire = new Questionaire("To sukkub");
        	questionaire.informUser();
