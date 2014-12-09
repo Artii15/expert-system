@@ -35,7 +35,7 @@ end
 
 rule "Określ płeć"
 	when
-		$humanoid : Attribute( name == "rodzaj", value == "humanoid" )
+		Attribute( name == "rodzaj", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("Określ płeć");
        	LinkedList<String> answers = questionaire.askUser();
@@ -244,6 +244,7 @@ end
 rule "To Francesca Findabair2"
 	when
 		Attribute( name == "profesja", value == "magia" )
+		not Attribute( name == "zarządzane państwo", value != "Dol Blathanna" )
 		Attribute( name == "rasa", value == "elf" )
 		Attribute( name == "płeć", value == "kobieta" )
 	then
@@ -381,6 +382,7 @@ end
 
 rule "To Filippa Eilhart"
 	when  
+		Attribute( name == "rasa", value == "człowiek" )
 		Attribute( name == "płeć", value == "kobieta" )
 		not Attribute( name == "profesja", value == "twórczość" )
 		(or 
