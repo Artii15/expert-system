@@ -100,7 +100,7 @@
                 "label": "Nilfgaard"
             }
         ],
-        "multiple": true
+        "multiple": false
     },
     {
         "rule": "Określ którymi państwami włada (kobieta)",
@@ -123,7 +123,7 @@
                 "label": "Dol Blathanna"
             }
         ],
-        "multiple": true
+        "multiple": false
     },
     {
         "rule": "To Meve",
@@ -256,7 +256,7 @@
                 "label": "Radovid"
             }
         ],
-        "multiple": true
+        "multiple": false
     },
     {
         "rule": "Określ szczególną cechę potwora",

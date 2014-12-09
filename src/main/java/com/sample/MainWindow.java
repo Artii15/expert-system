@@ -72,11 +72,12 @@ public class MainWindow extends JFrame{
 		ButtonGroup group = null;
 	
 		if(questionData.multiple == false) {
-			group = new ButtonGroup();
+			group = new NoneSelectedButtonGroup();
 		}
 		for(Answer answer : questionData.answers) {
 			addAnswer(answer, group);
 		}
+		this.confirmButton.setText("Dalej");
 		this.confirmButton.setVisible(true);
 		this.pack();
 		this.repaint();
@@ -124,7 +125,7 @@ public class MainWindow extends JFrame{
 		ImagePanel img = new ImagePanel("./res/img/" + solutionInfo.img);
 		solutionBox.add(img);
 		
-		this.confirmButton.setVisible(false);
+		this.confirmButton.setText("Szukaj dalej");
 		this.pack();
 		this.repaint();
 	}

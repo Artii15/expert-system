@@ -288,6 +288,7 @@ end
 rule "To Radovid"
 	when
 		Attribute( name == "zarządzane państwo", value == "Redania" )
+		Attribute( name == "płeć", value == "mężczyzna" )
 	then
 		Questionaire questionaire = new Questionaire("To Radovid");
        	questionaire.informUser();
@@ -448,7 +449,7 @@ rule "To Triss2"
 			Attribute( name == "romans", value == "tak" )
 			not Attribute( name == "romans" )
 		)
-			
+		Attribute( name == "płeć", value == "kobieta" )	
 		not Attribute( name == "profesja", value == "twórczość" )
 		not Attribute( name == "profesja", value == "sprawowanie władzy" )
 	then
@@ -514,4 +515,12 @@ rule "To Ciri"
 	then
 		Questionaire questionaire = new Questionaire("To Ciri");
        	questionaire.informUser();
+end
+
+rule "Nie znaleziono rozwiązania"
+		salience( -1 )
+	when
+		exists Attribute()
+	then
+		System.out.println("Nie wiem o kogo chodzi");
 end
