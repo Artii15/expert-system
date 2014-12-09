@@ -23,7 +23,7 @@ end
 
 rule "Określ rasę"
 	when
-		$rodzaj : Attribute( name == "rodzaj", value == "humanoid" )
+		Attribute( name == "rodzaj", value == "humanoid" )
 	then
 		Questionaire questionaire = new Questionaire("Określ rasę");
 		LinkedList<String> answers = questionaire.askUser();
@@ -526,7 +526,6 @@ end
 rule "Nie znaleziono rozwiązania"
 		salience( -1 )
 	when
-		exists Attribute()
 	then
 		Questionaire questionaire = new Questionaire("Nie znaleziono rozwiązania");
        	questionaire.informUser();
