@@ -598,4 +598,27 @@
         ],
         "multiple": false
     },
+    {
+        "rule": "Określ podatności potwora",
+        "label": "Na co podatny jest ten potwór?"
+        "answers": [
+            {
+                "img": "iron.jpg",
+                "label": "żelazo"
+            },
+            {
+                "img": "silver.jpg",
+                "label": "srebro"
+            },
+            {
+                "img": "fire.jpg",
+                "label": "ogień"
+            },
+            {
+                "img": "light.jpg",
+                "label": "światło"
+            }
+        ],
+        "multiple": true
+    },
 ]

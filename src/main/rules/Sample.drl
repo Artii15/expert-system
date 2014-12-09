@@ -98,6 +98,18 @@ rule "Określ typ potwora"
        	}
 end
 
+rule "Określ podatności potwora"
+	when
+		Attribute( name == "rodzaj", value == "potwór" )
+	then
+		Questionaire questionaire = new Questionaire("Określ podatności potwora");
+       	LinkedList<String> answers = questionaire.askUser();
+       	
+       	for(String answer : answers) {
+       		insert(new Attribute("podatność", answer));
+       	}
+end
+
 rule "Określ szczególną cechę potwora"
 	when
 		Attribute( name == "rodzaj", value == "potwór" )
