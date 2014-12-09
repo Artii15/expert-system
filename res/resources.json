@@ -271,6 +271,10 @@
                 "label": "Wysysa siły witalne"
             },
             {
+                "img": "polymorphism.jpg",
+                "label": "Polimorfizm"
+            },
+            {
                 "img": "blood.jpg",
                 "label": "Pije krew"
             }
@@ -278,8 +282,8 @@
         "multiple": false
     },
     {
-        "rule": "To wampir",
-        "label": "To wampir",
+        "rule": "To wampir wyższego rzędu",
+        "label": "To wampir wyższego rzędu",
         "answers": [
             {
                 "img": "vampire_female.jpg",
@@ -615,10 +619,80 @@
                 "label": "ogień"
             },
             {
+                "img": "sound.jpg",
+                "label": "hałas"
+            },
+            {
                 "img": "light.jpg",
                 "label": "światło"
             }
         ],
         "multiple": true
+    },
+    {
+        "rule": "To leszy",
+        "label": "To leszy"
+        "answers": [
+            {
+                "img": "leszy.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To złoty smok",
+        "label": "To złoty smok"
+        "answers": [
+            {
+                "img": "dragon.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To przeraza",
+        "label": "To przeraza"
+        "answers": [
+            {
+                "img": "przeraza.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To ghul",
+        "label": "To ghul"
+        "answers": [
+            {
+                "img": "ghul.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To wampir niższego rzędu",
+        "label": "To wampir niższego rzędu"
+        "answers": [
+            {
+                "img": "garkain.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
+    {
+        "rule": "To skolopendromorf",
+        "label": "To skolopendromorf",
+        "answers": [
+            {
+                "img": "skolopendromorf.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
     },
 ]
