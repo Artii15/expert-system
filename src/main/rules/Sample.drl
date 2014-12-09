@@ -230,18 +230,22 @@ rule "To Calanthe"
        	questionaire.informUser();
 end
 
-rule "To Francesca Findabair"
+rule "To Francesca Findabair1"
 	when
-		(or
-			Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
-			not Attribute( name == "zarządzane państwo" )
-		)
+		Attribute( name == "profesja", value == "sprawowanie władzy" )
+		Attribute( name == "zarządzane państwo", value == "Dol Blathanna" )
 		Attribute( name == "rasa", value == "elf" )
 		Attribute( name == "płeć", value == "kobieta" )
-		(or
-			Attribute( name == "profesja", value == "magia" )
-			Attribute( name == "profesja", value == "sprawowanie władzy" )
-		)
+	then
+		Questionaire questionaire = new Questionaire("To Francesca Findabair");
+       	questionaire.informUser();
+end
+
+rule "To Francesca Findabair2"
+	when
+		Attribute( name == "profesja", value == "magia" )
+		Attribute( name == "rasa", value == "elf" )
+		Attribute( name == "płeć", value == "kobieta" )
 	then
 		Questionaire questionaire = new Questionaire("To Francesca Findabair");
        	questionaire.informUser();
