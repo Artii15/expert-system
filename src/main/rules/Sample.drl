@@ -238,8 +238,10 @@ rule "To Francesca Findabair"
 		)
 		Attribute( name == "rasa", value == "elf" )
 		Attribute( name == "płeć", value == "kobieta" )
-		Attribute( name == "profesja", value == "magia" )
-		Attribute( name == "profesja", value == "sprawowanie władzy" )
+		(or
+			Attribute( name == "profesja", value == "magia" )
+			Attribute( name == "profesja", value == "sprawowanie władzy" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Francesca Findabair");
        	questionaire.informUser();
@@ -522,5 +524,6 @@ rule "Nie znaleziono rozwiązania"
 	when
 		exists Attribute()
 	then
-		System.out.println("Nie wiem o kogo chodzi");
+		Questionaire questionaire = new Questionaire("Nie znaleziono rozwiązania");
+       	questionaire.informUser();
 end

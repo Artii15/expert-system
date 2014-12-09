@@ -506,7 +506,18 @@
             }
         ],
         "multiple": false
-    }
+    },
+    {
+        "rule": "Nie znaleziono rozwiązania",
+        "label": "Nie wiem o kogo chodzi :(",
+        "answers": [
+            {
+                "img": "no_solution.jpg",
+                "label": ""
+            }
+        ],
+        "multiple": false
+    },
     {
         "rule": "Określ typ potwora",
         "label": "Jakiego rodzaju jest ten potwór?"
