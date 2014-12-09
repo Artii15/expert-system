@@ -279,7 +279,7 @@
                 "label": "Pije krew"
             }
         ],
-        "multiple": false
+        "multiple": true
     },
     {
         "rule": "To wampir wyższego rzędu",

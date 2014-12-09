@@ -122,13 +122,28 @@ rule "Określ szczególną cechę potwora"
        	}
 end
 
-rule "To leszy"
+rule "To leszy1"
 	when
 		Attribute( name == "typ potwora", value == "inteligentny")
+		not Attribute( name == "cecha szczególna", value != "Polimorfizm")
 		Attribute( name == "cecha szczególna", value == "Polimorfizm")
 		Attribute( name == "gatunek", value == "upiór")
-		not Attribute( name == "podatność", value == "żelazo")
-		not Attribute( name == "podatność", value == "światło")
+		
+		not Attribute( name == "podatność", value != "srebro")
+		Attribute( name == "podatność", value == "srebro")
+	then
+		Questionaire questionaire = new Questionaire("To leszy");
+       	questionaire.informUser();
+end
+
+rule "To leszy2"
+	when
+		Attribute( name == "typ potwora", value == "inteligentny")
+		not Attribute( name == "cecha szczególna", value != "Polimorfizm")
+		Attribute( name == "cecha szczególna", value == "Polimorfizm")
+		Attribute( name == "gatunek", value == "upiór")
+		
+		not Attribute( name == "podatność" )
 	then
 		Questionaire questionaire = new Questionaire("To leszy");
        	questionaire.informUser();
@@ -139,7 +154,9 @@ rule "To złoty smok"
 		Attribute( name == "typ potwora", value == "inteligentny")
 		Attribute( name == "gatunek", value == "inny")
 		Attribute( name == "podatność", value == "srebro")
+		not Attribute( name == "podatność", value != "srebro")
 		Attribute( name == "cecha szczególna", value == "Polimorfizm" )
+		not Attribute( name == "cecha szczególna", value != "Polimorfizm" )
 	then
 		Questionaire questionaire = new Questionaire("To złoty smok");
        	questionaire.informUser();
@@ -150,6 +167,7 @@ rule "To przeraza"
 		Attribute( name == "typ potwora", value == "prymitywny")
 		Attribute( name == "gatunek", value == "insektoid")
 		Attribute( name == "podatność", value == "hałas")
+		not Attribute( name == "podatność", value != "hałas")
 		not Attribute( name == "cecha szczególna" )
 	then
 		Questionaire questionaire = new Questionaire("To przeraza");
@@ -160,29 +178,100 @@ rule "To ghul"
 	when
 		Attribute( name == "typ potwora", value == "prymitywny")
 		Attribute( name == "gatunek", value == "trupojad")
-		Attribute( name == "podatność", value == "srebro")
+		(or
+			Attribute( name == "podatność", value == "srebro")
+			Attribute( name == "podatność", value == "żelazo")	
+		)
+		not Attribute( name == "podatność", value == "hałas")
+		not Attribute( name == "podatność", value == "światło")
+		not Attribute( name == "podatność", value == "ogień")	
 		not Attribute( name == "cecha szczególna" )
 	then
 		Questionaire questionaire = new Questionaire("To ghul");
        	questionaire.informUser();
 end
 
-rule "To wampir niższego rzędu"
+rule "To wampir niższego rzędu1"
 	when
 		Attribute( name == "typ potwora", value == "prymitywny")
-		Attribute( name == "gatunek", value == "upiór")
-		Attribute( name == "podatność", value == "srebro")
 		Attribute( name == "podatność", value == "światło")
-		Attribute( name == "cecha szczególna", value == "Pije krew" )
+		
+		(or 
+			Attribute( name == "cecha szczególna", value == "Pije krew" )
+			Attribute( name == "cecha szczególna", value == "Polimorfizm" )
+			not Attribute( name == "cecha szczególna" )
+		)
+		not Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca" )
+		not Attribute( name == "cecha szczególna", value == "Wysysa siły witalne" )
+		not Attribute( name == "podatność", value == "hałas")
+		not Attribute( name == "podatność", value == "ogień")
+		not Attribute( name == "podatność", value == "żelazo")
+		
+		(or
+			Attribute( name == "gatunek", value == "upiór")
+			not Attribute( name == "gatunek" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To wampir niższego rzędu");
+       	questionaire.informUser();
+end
+
+
+rule "To wampir niższego rzędu2"
+	when
+		Attribute( name == "typ potwora", value == "prymitywny")
+		Attribute( name == "cecha szczególna", value == "Pije krew")
+		
+		(or 
+			Attribute( name == "podatność", value == "srebro" )
+			Attribute( name == "podatność", value == "światło" )
+			not Attribute( name == "podatność" )
+		)
+		not Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca" )
+		not Attribute( name == "cecha szczególna", value == "Wysysa siły witalne" )
+		not Attribute( name == "podatność", value == "hałas")
+		not Attribute( name == "podatność", value == "ogień")
+		not Attribute( name == "podatność", value == "żelazo")
+		
+		(or
+			Attribute( name == "gatunek", value == "upiór")
+			not Attribute( name == "gatunek" )
+		)
+	then
+		Questionaire questionaire = new Questionaire("To wampir niższego rzędu");
+       	questionaire.informUser();
+end
+
+
+rule "To skolopendromorf"
+	when
+		Attribute( name == "typ potwora", value == "prymitywny")
+		Attribute( name == "gatunek", value == "insektoid")
+		(or
+			Attribute( name == "podatność", value == "srebro")
+			Attribute( name == "podatność", value == "ogień")
+		)
+		not Attribute( name == "podatność", value == "żelazo" )
+		not Attribute( name == "podatność", value == "światło" ) 
+		not Attribute( name == "cecha szczególna" )
+	then
+		Questionaire questionaire = new Questionaire("To skolopendromorf");
        	questionaire.informUser();
 end
 
 rule "To wampir wyższego rzędu"
 	when
 		Attribute( name == "typ potwora", value == "inteligentny")
-		Attribute( name == "cecha szczególna", value == "Pije krew")
+		Attribute( name == "cecha szczególna", value == "Pije krew" )
+		not Attribute( name == "cecha szczególna", value == "Reaguje na pełnię księżyca" )
+		not Attribute( name == "cecha szczególna", value == "Wysysa siły witalne" )
+		
+		not Attribute( name == "podatność", value != "srebro")
+		
+		(or
+			Attribute( name == "gatunek", value == "upiór")
+			not Attribute( name == "gatunek" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To wampir wyższego rzędu");
        	questionaire.informUser();
