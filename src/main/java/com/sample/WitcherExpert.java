@@ -9,7 +9,7 @@ import org.json.simple.parser.ParseException;
 /**
  * This is a sample class to launch a rule.
  */
-public class DroolsTest {
+public class WitcherExpert {
 	
 	public static final Object monitor = new Object();
 	public static Settings settings;
@@ -17,7 +17,7 @@ public class DroolsTest {
 	
     public static final void main(String[] args) throws ParseException, IOException {
     	settings = new Settings("./res/resources.json");
-    	frame = new MainWindow("Expert system", monitor);
+    	frame = new MainWindow("Witcher expert", monitor);
     	openGUI();
     	ReasoningModule reasoningModule = new ReasoningModule();
     	Thread reasoningThread = new Thread(reasoningModule);

@@ -7,22 +7,22 @@ public class Questionaire {
 	private String ruleName;
 	
 	public Questionaire(String ruleName) {
-		this.monitor = DroolsTest.monitor;
+		this.monitor = WitcherExpert.monitor;
 		this.ruleName = ruleName;
 	}
 	
 	public LinkedList<String> askUser() throws InterruptedException {
-		Rule questionData = DroolsTest.settings.getSettings().get(ruleName);
-		DroolsTest.frame.displayQuestion(questionData);
+		Rule questionData = WitcherExpert.settings.getSettings().get(ruleName);
+		WitcherExpert.frame.displayQuestion(questionData);
 		waitForUser();  
-		LinkedList<String> answers = DroolsTest.frame.getAnswer();
+		LinkedList<String> answers = WitcherExpert.frame.getAnswer();
 		
 	    return answers;
 	}
 	
 	public void informUser() throws InterruptedException {
-		Rule solution = DroolsTest.settings.getSettings().get(ruleName);
-		DroolsTest.frame.displaySolution(solution);
+		Rule solution = WitcherExpert.settings.getSettings().get(ruleName);
+		WitcherExpert.frame.displaySolution(solution);
 		
 		waitForUser();
 	}
