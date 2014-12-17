@@ -32,7 +32,6 @@ public class MainWindow extends JFrame{
 	
 	private void configureMainPane() {
 		mainPane.setLayout(new BoxLayout(mainPane, BoxLayout.Y_AXIS));
-		//mainPane.setPreferredSize(new Dimension(900, 600));
 	}
 	
 	private void addStatusLabel() {
@@ -124,6 +123,10 @@ public class MainWindow extends JFrame{
 		
 		ImagePanel img = new ImagePanel("./res/img/" + solutionInfo.img);
 		solutionBox.add(img);
+		
+		JLabel description = new JLabel(solutionInfo.label);
+		description.setAlignmentX(CENTER_ALIGNMENT);
+		solutionBox.add(description);
 		
 		this.confirmButton.setText("Szukaj dalej");
 		this.pack();

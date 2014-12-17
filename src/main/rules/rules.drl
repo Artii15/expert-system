@@ -417,6 +417,10 @@ rule "To Meve"
 			not Attribute( name == "kolor włosów" )
 			Attribute( name == "kolor włosów", value == "białe" )
 		)
+		(or
+			not Attribute( name == "zarządzane państwo" )
+			Attribute( name == "zarządzane państwo", value == "Lyria i Rivia" )
+		)
 	then
 		Questionaire questionaire = new Questionaire("To Meve");
        	questionaire.informUser();

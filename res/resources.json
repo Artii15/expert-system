@@ -131,7 +131,9 @@
         "answers": [
             {
                 "img": "meve.jpg",
-                "label": ""
+                "label": "<html>- Dlaczego - odezwała się nagle Meve - wszyscy patrzycie na mnie?
+                          <br>- Zachwycamy się twoją urodą - zaburczał Henselt z głębi kufla.
+                          <br>- To też - przytaknął Vizimir. - Meve, wszyscy wiemy, że potrafisz znaleźć wyjście z każdej sytuacji. Masz kobiecą intuicję, jesteś mądrą niewiastą... </html>"
             }
         ],
         "multiple": false
@@ -142,7 +144,9 @@
         "answers": [
             {
                 "img": "calanthe.jpg",
-                "label": ""
+                "label": "<html> w Lwiątku płynie krew Calanthe. Bardzo gorąca krew. Znałam Cali, gdy była młoda.
+                          <br> Kiedy zobaczyła chłopa, to tak przebierała nogami, że jakby chrustu podetkać, zajęłaby się żywym ogniem.
+                          <br> Jej córka Pavetta, matka Lwiątka, była kubek w kubek. To pewnie i Lwiątko daleko nie padło od jabłoni.</html>"
             }
         ],
         "multiple": false
@@ -153,7 +157,12 @@
         "answers": [
             {
                 "img": "francesca.jpg",
-                "label": ""
+                "label": "<html> Za parą szła atrakcyjna kobieta o bardzo długich, ciemnozłotych włosach, szeleszcząc zdobioną koronkami suknią w kolorze rezedy.<br>
+                          – Francesca Findabair, nazywana Enid an Gleanna, Stokrotką z Dolin. Nie wytrzeszczaj oczu, wiedźminie. Powszechnie uważa się ją za najpiękniejszą kobietę świata.<br>
+                          – Jest członkiem Kapituły? – zdziwił się szeptem. – Wygląda na bardzo młodą. Też eliksiry magiczne?<br>
+                          – Nie w jej przypadku. Francesca jest elfką czystej krwi. (...)<br>
+                          Rzucało się to w oczy nawet wobec faktu, że u jego boku płynęła zwiewnie Francesca Findabair o ogromnych, sarnich oczach i urodzie wręcz zapierającej dech.<br>
+                          </html>"
             }
         ],
         "multiple": false
@@ -164,7 +173,12 @@
         "answers": [
             {
                 "img": "esterad.jpg",
-                "label": ""
+                "label": "<html> Król miał na ramionach karmazynowy, obszyty gronostajami płaszcz, na głowie zaś pasujące do płaszcza aksamitne chapeau.<br>
+                          Jak wszyscy mężczyźni z klanu Thyssenidów, był wysoki, potężnie zbudowany i zbójecko przystojny. Wyglądał zawsze krzepko i zdrowo, niby marynarz, <br>
+                          który dopiero co wrócił z morza - wręcz czuło się od niego morską wodę i zimny słony wiatr.<br>
+                          Jak u wszystkich Thyssenidów, dokładny wiek króla trudny był do określenia.<br>
+                          Patrząc na włosy, cerę i dłonie - miejsca najdobitniej świadczące o wieku - Esteradowi można było dać czterdzieści pięć lat. Dijkstra wiedział, że król ma pięćdziesiąt sześć. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -175,7 +189,9 @@
         "answers": [
             {
                 "img": "emhyr.jpg",
-                "label": ""
+                "label": "<html>Czekali obaj. W ciszy. Cierpliwie. Tak jak należało czekać na rozkazy, nad treścią i brzmieniem<br> 
+                          których zastanawiał się imperator Nilfgaardu, Emhyr var Emreis, Deithwen Addan yn Carn aep Morvudd, Biały Płomień Tańczący na Kurhanach Wrogów.
+                          </html>"
             }
         ],
         "multiple": false
@@ -186,7 +202,9 @@
         "answers": [
             {
                 "img": "henselt.jpg",
-                "label": ""
+                "label": "<html>Po przeciwnej stronie stołu zasiadał Henselt, król Kaedwen,<br>
+                          biegając po uczestnikach narady małymi przenikliwymi oczami, błyszczącymi w brodatej jak u rozbójnika fizjonomii. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -197,7 +215,8 @@
         "answers": [
             {
                 "img": "demawend.jpg",
-                "label": ""
+                "label": "<html>Demawend, władca Aedirn, siedział rozparty w fotelu, wpatrzony w kufel piwa ustawiony na brzuchu 
+                          </html>"
             }
         ],
         "multiple": false
@@ -208,7 +227,9 @@
         "answers": [
             {
                 "img": "foltest.jpg",
-                "label": ""
+                "label": "<html>Byłem zawsze rzecznikiem pojednania i koegzystencji, ale jeśli oni wolą próbę sił, to spróbujemy, kto silniejszy.<br>
+                          Jestem gotów. W Temerii podejmuję się wykończyć Wiewiórki w ciągu sześciu miesięcy.
+                          </html>"
             }
         ],
         "multiple": false
@@ -219,7 +240,10 @@
         "answers": [
             {
                 "img": "radovid.jpg",
-                "label": ""
+                "label": "<html>Nikt nie mógł wówczas przewidzieć i zgadnąć, że z tego trzynastolatka, teraz osoby bez żadnego znaczenia<br>
+                          w kraju rządzonym przez Radę Regencyjną i Dijkstrę, wyrośnie król. Król, który - odpłaciwszy wszystkim doznane<br>
+                          przez siebie i matkę zniewagi - przejdzie do historii jako Radowid V Srogi. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -287,7 +311,15 @@
         "answers": [
             {
                 "img": "vampire_female.jpg",
-                "label": ""
+                "label": "<html>Wieśniacy czosnek w wielkiej obfitości pojedli, a ku większej pewności wieńce sobie czosnkowe na szyjach pozawieszali.<br>
+                         Niektórzy, osobliwie niewiasty, całe główki czosnku pozatykali, gdzie jeno mogli. Całe sioło czosnkiem śmierdziało horrendum, <br>
+                         dumali tedy kmiecie, że w bezpieczności są i że nic im upir uczynić nie zdoła. Wielkie było zasię ich zdumienie, gdy upir, <br>
+                         o północku nadleciawszy, nie zląkł się zgoła, jeno śmiać się jął, zębami od uciechy zgrzytać a szydzić. <br>
+                         \"Dobrze to, wołał, żeście się przyprawili, wnet was żreć będę, a przyprawione mięsiwo więcej mi do smaku. Posólcie się jeszcze a popieprzcie, a i o musztardzie nie zapomnijcie.\"
+                         <br>
+                         <br>
+                         Silvester Bugiardo, Liber Tenebrarum, czyli Xięga Przypadków Strasznych lecz Prawdziwych, nigdy Nauką nie Explikowanych 
+                         </html>"
             }
         ],
         "multiple": false
@@ -298,7 +330,11 @@
         "answers": [
             {
                 "img": "werewolf.jpg",
-                "label": ""
+                "label": "<html>Wyciągnął spod poduszki sakiewkę, szybko przeliczył dziesięciokoronówki. Sto pięćdziesiąt za wczorajszą mantikorę. <br>
+                          Pięćdziesiąt za mglaka, którego zabił na zlecenie wójta z wioski pod Carreras. I pięćdziesiąt za wilkołaka, którego wystawili mu osadnicy z Burdorffu.<br>
+                          Pięćdziesiąt za wilkołaka. Dużo, bo robota była łatwa. Wilkołak nie bronił się. Zagnany do jaskini, z której nie było wyjścia, <br>
+                          uklęknął i czekał na cios miecza. Wiedźminowi było go żal. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -309,7 +345,10 @@
         "answers": [
             {
                 "img": "sukkub.jpg",
-                "label": ""
+                "label": "<html>Ów sukkub, co nocami mężów nawiedza i dręczy... Co to go wam jaśnie oświecona księżna pani ubić zleciła... <br>
+                          Tuszę, zabijać go nie ma wcale musu. Przecie zmora nikomu nie wadzi, tak po prawdzie... Ot, nawiedzi czasem... Podręczy krzynę...<br>
+                          - Ale jeno pełnoletnich - wtrącił szybko Malatesta.
+                          </html>"
             }
         ],
         "multiple": false
@@ -354,7 +393,8 @@
         "answers": [
             {
                 "img": "triss.jpg",
-                "label": ""
+                "label": "<html>Kasztanowłosa Triss Merigold, wesoła, chichocząca z byle powodu, wyglądająca jak podlotek. Lubił ją. I ona jego też.
+                          </html>"
             }
         ],
         "multiple": false
@@ -365,7 +405,8 @@
         "answers": [
             {
                 "img": "coen.jpg",
-                "label": ""
+                "label": "<html>Komora niezawodnie przebita. Aorta niemal odseparowana... A on jeszcze przed chwilą oddychał. Tu na stole. Ugodzony w samo serce, dożył aż do stołu...
+                          </html>"
             }
         ],
         "multiple": false
@@ -376,7 +417,11 @@
         "answers": [
             {
                 "img": "geralt.jpg",
-                "label": ""
+                "label": "<html>-To wszakże twoi rodacy, wiedźminie - powiedział Regis. - Przecież nazywają cię Geraltem z Rivii.<br>
+                          - Poprawka - odrzekł zimno. - To ja sam się tak nazywam, żeby było ładniej. Imię z takim dodatkiem budzi u moich klientów większe zaufanie.<br>
+                          -Pojmuję - uśmiechnął się wampir. - Dlaczego jednak wybrałeś właśnie Rivię?<br>
+                          <br>- Ciągnąłem patyki. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -387,7 +432,8 @@
         "answers": [
             {
                 "img": "eskel.jpg",
-                "label": ""
+                "label": "<html>Obok Geralta stał Eskel, podobny do Wilka jak brat, jeśli nie liczyć koloru włosów i długiej blizny zniekształcającej policzek. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -398,7 +444,9 @@
         "answers": [
             {
                 "img": "jaskier.jpg",
-                "label": ""
+                "label": "<html>Wiadomym jest mi, że masz lat blisko czterdzieści, wyglądasz na blisko trzydzieści, wyobrażasz sobie, że masz nieco ponad dwadzieścia, <br>
+                          a postępujesz tak, jakbyś miał niecałe dziesięć. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -424,7 +472,11 @@
         "answers": [
             {
                 "img": "zoltan.jpg",
-                "label": ""
+                "label": "<html>- Moją ogromną przywarą - wyjaśnił - jest niepohamowana dobroć. Ja po prostu muszę czynić dobro. <br>
+                          Jestem jednak rozsądnym krasnoludem i wiem, że wszystkim wyświadczyć dobra nie zdołam, Gdybym próbował być dobry dla wszystkich, <br>
+                          dla całego świata i wszystkich zamieszkujących go istot, byłaby to kropelka pitnej wody w słonym morzu, innymi słowy: stracony wysiłek. <br>
+                          Postanowiłem zatem czynić dobro konkretne, takie, które nie idzie na marne. Jestem dobry dla siebie i dla mego bezpośredniego otoczenia. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -435,7 +487,11 @@
         "answers": [
             {
                 "img": "yarpen.jpg",
-                "label": ""
+                "label": "<html>
+                          - Yarpen Zigrin - stwierdził Geralt, zaskoczony. - Nikt inny, a Yarpen Zigrin we własnej brodatej osobie!</br>
+                          (...)<br>
+                          Krasnolud podszedł, wyciągnął rękę. Jego uścisk mógł śmiało pójść w zawody z żelaznymi obcęgami. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -446,7 +502,11 @@
         "answers": [
             {
                 "img": "filippa.jpg",
-                "label": ""
+                "label": "<html>Filippa Eilhart, choć bardzo atrakcyjna, była zdecydowanie bardzo niemiła.<br>
+                          Oprócz tego Filippa Eilhart była ważną osobą w Radzie Czarodziejów i zaufaną nadworną magiczką króla Vizimira. <br>
+                          Była bardzo zdolną magiczką. Wieść głosiła, że była jedną z niewielu, które posiadały sztukę polimorfii. <br>
+                          Wyglądała na trzydzieści lat. Prawdopodobnie miała nie mniej niż trzysta. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -457,7 +517,11 @@
         "answers": [
             {
                 "img": "sabrina.jpg",
-                "label": ""
+                "label": "<html>- Wszystkie z nas spotka marny los, chciałam powiedzieć - dokończyła szybko Sabrina. - Filippa, Triss i ja, wszystkie trzy byłyśmy na Wzgórzu Sodden. <br>
+                          Emhyr rozliczy się z nami za tamtą klęskę, za Thanedd, za całokształt naszej działalności. Ale to tylko jedno z zastrzeżeń, <br>
+                          które budzi we mnie deklarowana apolityczność tego konwentu. Czy udział w nim oznacza natychmiastową rezygnację z czynnej i politycznej wszak służby, <br>
+                          którą obecnie pełnimy przy naszych królach? Czy też mamy w tej służbie pozostać i służyć dwóm paniom: magii i władzy?
+                          </html>"
             }
         ],
         "multiple": false
@@ -468,7 +532,12 @@
         "answers": [
             {
                 "img": "yen.jpg",
-                "label": ""
+                "label": "<html>-Nie przesadzasz? -uśmiechnął się wiedźmin. -Nie zrobiła na mnie aż tak złego wrażenia. Wyższość, owszem, lubi demonstrować, <br>
+                          ale w porównaniu z innymi czarodziejami, z tą całą arogancką bandą, jest chodzącym wdziękiem i wcieloną życzliwością. <br>
+                          Chireadan również się uśmiechnął. -To trochę tak -powiedział -jakbyś uważał, że skorpion jest ładniejszy niż pająk, bo ma taki śliczny ogonek. <br>
+                          Uważaj, Geralt. Nie jesteś pierwszym, który tak ją ocenia, nie wiedząc, że z wdzięku i urody uczyniła broń. <br>
+                          Oręż, którym posługuje się nader zręcznie i bez skrupułów. Co oczywiście nie umniejsza faktu, że jest fascynująco urodziwą kobietą. Nie zaprzeczysz, prawda?
+                          </html>"
             }
         ],
         "multiple": false
@@ -506,7 +575,10 @@
         "answers": [
             {
                 "img": "ciri.jpg",
-                "label": ""
+                "label": "<html>- Tak, Nenneke - powiedziała. - Nie ma wątpliwości.. Wystarczy zajrzeć w te zielone oczęta, by wiedzieć, że coś w niej jest. 
+                          Wysokie czoło, regularne łuki brwiowe, ładny rozstaw oczu. Cienkie skrzydełka nosa. Długie palce. Rzadki pigment włosów.Ewidentna krew elfów, <br>
+                          choć niedużo w niej tej krwi. Elfi pradziadek lub prababka. Trafiłam? 
+                          </html>"
             }
         ],
         "multiple": false
@@ -635,7 +707,9 @@
         "answers": [
             {
                 "img": "leszy.jpg",
-                "label": ""
+                "label": "<html>Coś, co siedziało w koronie olbrzymiego dębu, wrzeszczało i syczało. Mógł to być leszy, ale mógł też to być i zwykły żbik. <br>
+                          Wiedźmin nie zatrzymał się, by sprawdzić.
+                          </html>"
             }
         ],
         "multiple": false
@@ -646,7 +720,13 @@
         "answers": [
             {
                 "img": "dragon.jpg",
-                "label": ""
+                "label": "<html>Na niewysokim pagórze siedziało stworzenie. Siedziało, wyginając w regularny łuk długą, smukłą szyję, skłoniwszy wąską głowę na wysklepioną pierś, <br>
+                          oplatając ogonem przednie, wyprostowane łapy. Było w tym stworzeniu, w pozycji, w jakiej siedziało, coś pełnego niewysłowionej gracji, coś kociego, <br>
+                          coś, co zaprzeczało ewidentnie jego gadziej proweniencji. Niezaprzeczalnie gadziej. Stworzenie było bowiem pokryte łuską, wyraźną w rysunku, <br>
+                          błyszczącą rażącym w oczy blaskiem jasnego, żółtego złota. Bo stworzenie siedzące na pagórku było złote - złote od czubków zarytych w ziemię pazurów <br>
+                          po koniec długiego ogona, poruszającego się leciutko wśród porastających pagórek ostów. Patrząc na nich wielkimi, złotymi oczami, <br>
+                          stworzenie rozwinęło szerokie, złociste, nietoperze skrzydła i tak trwało nieruchome, każąc się podziwiać. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -657,7 +737,9 @@
         "answers": [
             {
                 "img": "przeraza.jpg",
-                "label": ""
+                "label": "<html>Zaczęła uważniej patrzeć pod nogi, a przed oczami stanęły jej ryciny z ksiąg, które oglądała w Kaer Morhen. Gigantyczny skorpion. <br>
+                          Scarletia. Przera­za. Wicht. Lamia. Krabopąjąk. Potwory żyjące na pusty­niach. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -668,7 +750,14 @@
         "answers": [
             {
                 "img": "ghul.jpg",
-                "label": ""
+                "label": "<html>
+                          - Srebrny grot - powiedziała. - Na takową okazję chowany. Pięć koron mnie na bazarze kosztował. Takim ghula da się ubić, wiedźminie?<br>
+                          - Nie sądzę, by tu były ghule.<br>
+                          - Sam mówiłeś - warknął Zoltan - że wisielca na dębie ghule obgryzły. A gdzie cmentarz, tam i ghule.<br>
+                          - Nie zawsze.<br>
+                          - Trzymam cię za słowo. Tyś Wiedźmin, specjalista, będziesz nas tedy bronił, mam nadzieję. Maruderów dziarsko pochlastałeś... Czy ghule biją się lepiej od maruderów? <br>
+                          - Nieporównanie. Prosiłem, przestań panikować. 
+                          </html>"
             }
         ],
         "multiple": false
@@ -679,7 +768,12 @@
         "answers": [
             {
                 "img": "garkain.jpg",
-                "label": ""
+                "label": "<html> Wampir a. upiór, jest człowiek zmarły, przez Chaos ożywiony. Pierwsze życie utraciwszy, w. drugiego w nocnej porze używa. <br>
+                          Wychodzi z grobu przy świetle księżyca i jeno za śladem jego promieni postępować może; napada śpiące dziewczęta lub młodych parobczaków, <br>
+                          których nie przebudziwszy, krew ich słodką ssie.<br><br>
+
+                          Physiologus 
+                          </html>"
             }
         ],
         "multiple": false
@@ -690,7 +784,10 @@
         "answers": [
             {
                 "img": "skolopendromorf.jpg",
-                "label": ""
+                "label": "<html>To coś miało około dwóch sążni długości i było ciemnobrązowe. W pierwszej chwili Geralt pomyślał, że to wąż. <br>
+                          Ale spostrzegł żółte, ruchliwe, haczykowate odnóża, płaskie segmenty długiego tułowia i zorientował się, że to nie wąż. Że to coś znacznie gorszego.<br>
+                          (...) Olbrzymi wij uniósł ponad trawy długie, drgające czułki, łowił nimi zapach i ciepło.
+                          </html>"
             }
         ],
         "multiple": false
